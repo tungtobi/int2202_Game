@@ -327,8 +327,9 @@
 	<SDL2/SDL.h>
 	<SDL_image.h>
 
-1524483359 source:d:\int2202_game\gameproject\main.cpp
+1524486002 source:d:\int2202_game\gameproject\main.cpp
 	"Game.h"
+	"Sprite.h"
 
 1519932851 d:\int2202_game\i686-w64-mingw32_image\include\sdl2\sdl_image.h
 	"SDL.h"
@@ -346,19 +347,24 @@
 	<string>
 	<SDL_image.h>
 
-1524466504 source:d:\int2202_game\gameproject\sprite.cpp
-	<SDL2/SDL.h>
-	<string>
-	<SDL_image.h>
-	<sprite.h>
+1524485079 source:d:\int2202_game\gameproject\sprite.cpp
+	"Sprite.h"
 
-1524483283 source:d:\int2202_game\gameproject\game.cpp
+1524492686 source:d:\int2202_game\gameproject\game.cpp
 	"Game.h"
 
-1524483291 d:\int2202_game\gameproject\game.h
+1524485947 d:\int2202_game\gameproject\game.h
 	<iostream>
+	<vector>
 	<SDL2/SDL.h>
+	<SDL_image.h>
+	"Sprite.h"
 
 1524483372 source:d:\int2202_game\gameproject\global.cpp
 	"Game.h"
+
+1524492767 d:\int2202_game\gameproject\sprite.h
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL_image.h>
 

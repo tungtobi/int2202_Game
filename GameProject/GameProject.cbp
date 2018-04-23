@@ -48,11 +48,12 @@
 			<Add directory="../i686-w64-mingw32_image/lib" />
 			<Add directory="../i686-w64-mingw32/lib" />
 		</Linker>
-		<Unit filename="Headers/mySDL.h" />
-		<Unit filename="Headers/sprite.h" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="Sprite.cpp" />
+		<Unit filename="Sprite.h" />
+		<Unit filename="global.cpp" />
 		<Unit filename="main.cpp" />
-		<Unit filename="mySDL.cpp" />
-		<Unit filename="sprite.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

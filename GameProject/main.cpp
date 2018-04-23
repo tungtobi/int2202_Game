@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Sprite.h"
 
 Game* DIRECTOR = nullptr;
 
@@ -15,11 +16,14 @@ int main(int argc, char* argv[])
 
     DIRECTOR->init(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
 
+    Sprite spr = DIRECTOR->addSprite("res/spaceShips_008.png");
+
+
     while (DIRECTOR->isRunning())
     {
         DIRECTOR->listenEvents();
         DIRECTOR->update();
-        DIRECTOR->render();
+        DIRECTOR->render(spr);
     }
 
     DIRECTOR->clean();

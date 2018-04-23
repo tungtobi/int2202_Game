@@ -2,7 +2,11 @@
 #define GAME_H_
 
 #include <iostream>
+#include <vector>
+
 #include <SDL2/SDL.h>
+#include <SDL_image.h>
+#include "Sprite.h"
 
 class Game
 {
@@ -14,8 +18,10 @@ public:
 
     void listenEvents();
     void update();
-    void render();
+    void render(Sprite spr);
     void clean();
+
+    Sprite addSprite(const char* path);
 
     bool isRunning()
     {

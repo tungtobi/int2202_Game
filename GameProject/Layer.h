@@ -2,6 +2,8 @@
 #define LAYER_H_
 
 #include "Game.h"
+#include "Player.h"
+#include "Fruit.h"
 #include <vector>
 
 class Layer
@@ -10,9 +12,12 @@ public:
     Layer();
     ~Layer();
 
-    std::vector <Sprite*> childs;
+    std::vector <Fruit*> fruits;
+    Player* player;
+    Fruit* fruit;
 
-    void addChild(Sprite* child);
+    void addFruit(Fruit* f);
+    void update();
     void render();
 };
 

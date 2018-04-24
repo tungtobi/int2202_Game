@@ -1,7 +1,7 @@
 #include "Player.h"
 
-extern const int SCREEN_WIDTH = 800;
-extern const int SCREEN_HEIGHT = 600;
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
 
 Player::Player()
 {
@@ -57,7 +57,7 @@ bool Player::isOutsideLayer()
         x = w / 2;
     }
 
-    return false;
+    //return false;
 }
 
 void Player::update()

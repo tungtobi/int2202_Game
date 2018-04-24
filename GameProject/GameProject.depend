@@ -327,7 +327,7 @@
 	<SDL2/SDL.h>
 	<SDL_image.h>
 
-1524584877 source:d:\int2202_game\gameproject\main.cpp
+1524587555 source:d:\int2202_game\gameproject\main.cpp
 	"Game.h"
 	"Sprite.h"
 	"Player.h"
@@ -353,7 +353,7 @@
 1524581723 source:d:\int2202_game\gameproject\sprite.cpp
 	"Sprite.h"
 
-1524581947 source:d:\int2202_game\gameproject\game.cpp
+1524586756 source:d:\int2202_game\gameproject\game.cpp
 	"Game.h"
 	"Player.h"
 	"Sprite.h"
@@ -384,23 +384,25 @@
 1524581083 d:\int2202_game\gameproject\player.h
 	"Game.h"
 
-1524583034 source:d:\int2202_game\gameproject\player.cpp
+1524587046 source:d:\int2202_game\gameproject\player.cpp
 	"Player.h"
 
-1524583120 source:d:\int2202_game\gameproject\fruit.cpp
+1524588390 source:d:\int2202_game\gameproject\fruit.cpp
 	"Fruit.h"
 	<cstdlib>
-	<ctime>
+	<time.h>
 
 1524583175 d:\int2202_game\gameproject\fruit.h
 	"Game.h"
 
-1524584985 source:d:\int2202_game\gameproject\layer.cpp
+1524587779 source:d:\int2202_game\gameproject\layer.cpp
 	"Layer.h"
 	"Player.h"
 	"Fruit.h"
 
-1524585139 d:\int2202_game\gameproject\layer.h
+1524587785 d:\int2202_game\gameproject\layer.h
 	"Game.h"
+	"Player.h"
+	"Fruit.h"
 	<vector>
 

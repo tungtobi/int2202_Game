@@ -55,7 +55,7 @@ void Game::update()
     dt++;
     listenEvents();
     //render();
-    std::cout << dt << std::endl;
+    //std::cout << dt << std::endl;
 }
 
 void Game::listenEvents()

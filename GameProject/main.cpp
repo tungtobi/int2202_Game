@@ -15,16 +15,28 @@ int main(int argc, char* argv[])
 {
     Game* director = new Game();
 
-    //const int frameDelay = int(1000 / FPS);
+    const int frameDelay = 1000 / FPS;
+    Uint32 frameStart;
+    int frameTime;
 
     director->init(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
 
-    //Layer* layer = new Layer();
+    Layer* layer = new Layer();
+
 
     while (director->isRunning())
     {
+        frameStart = SDL_GetTicks();
+
         director->update();
-       // layer->render();
+        layer->update();
+
+        frameTime = SDL_GetTicks() - frameStart;
+
+        if (frameDelay > frameTime)
+        {
+            SDL_Delay(frameDelay - frameTime);
+        }
     }
 
     director->clean();

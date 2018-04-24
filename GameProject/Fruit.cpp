@@ -1,14 +1,16 @@
 #include "Fruit.h"
 #include <cstdlib>
-#include <ctime>
+#include <time.h>
 
-extern const int SCREEN_WIDTH = 800;
-extern const int SCREEN_HEIGHT = 600;
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
 
 int Fruit::getRandomPositionX(int width)
 {
-    srand(time(0));
-    return rand() % (width - w) + w / 2;
+    srand(time(NULL));
+    int posX = rand() % width;
+
+    return posX;
 }
 
 Fruit::Fruit()
@@ -16,7 +18,7 @@ Fruit::Fruit()
     sprite = new Sprite("res/fruit.png");
     sprite->attr(w, h, scale, angle);
 
-    x = Fruit::getRandomPositionX(SCREEN_WIDTH);
+    x = getRandomPositionX(SCREEN_WIDTH);
     y = -50;
 }
 
@@ -24,20 +26,21 @@ bool Fruit::isOutsideLayer()
 {
     if (y + h / 2 > SCREEN_HEIGHT)
     {
-        x = Fruit::getRandomPositionX(SCREEN_WIDTH);
+        x = getRandomPositionX(SCREEN_WIDTH) / 2;
+        std::cout << x << std::endl;
         y = -50;
-        return true;
+        //return true;
     }
-    return false;
+    //return false;
 }
 
 void Fruit::update()
 {
-    y += speed;
+    y += 1;
     sprite->dstRect.x = x - w / 2;
     sprite->dstRect.y = y - h / 2;
 
-    //sprite->render();
+    isOutsideLayer();
 
 }
 

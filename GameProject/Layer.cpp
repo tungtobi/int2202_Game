@@ -4,24 +4,33 @@
 
 Layer::Layer()
 {
-    Player* player = new Player();
-    addChild(player->sprite);
-
-    Fruit* fruit = new Fruit();
-    addChild(fruit->sprite);
+    Layer::player = new Player();
+    Layer::fruit = new Fruit();
+    addFruit(fruit);
 }
 
-void Layer::addChild(Sprite* child)
+void Layer::addFruit(Fruit* f)
 {
-    Layer::childs.push_back(child);
+    Layer::fruits.push_back(f);
+}
+
+void Layer::update()
+{
+    Layer::player->update();
+    for (Fruit* f : Layer::fruits)
+    {
+        f->update();
+    }
+    render();
 }
 
 void Layer::render()
 {
     SDL_RenderClear(Game::renderer);
-    for (Sprite* spr : Layer::childs)
+    Layer::player->sprite->render();
+    for (Fruit* f : Layer::fruits)
     {
-        spr->render();
+        f->sprite->render();
     }
     SDL_RenderPresent(Game::renderer);
 }

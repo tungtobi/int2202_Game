@@ -1,12 +1,14 @@
 #ifndef GAME_H_
 #define GAME_H_
 
+#include "Sprite.h"
 #include <iostream>
 #include <vector>
-
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
-#include "Sprite.h"
+#include "TextureManager.h"
+
+
 
 class Game
 {
@@ -18,21 +20,22 @@ public:
 
     void listenEvents();
     void update();
-    void render(Sprite spr);
+    void render();
+    //void renderSprite(Sprite* sprite);
     void clean();
-
-    Sprite addSprite(const char* path);
 
     bool isRunning()
     {
         return _isRunning;
     }
 
+    static SDL_Renderer* renderer;
+    static SDL_Event event;
+
 private:
-    int cnt = 0;
+    int dt = 0;
     bool _isRunning;
     SDL_Window* window;
-    SDL_Renderer* renderer;
 };
 
 #endif // GAME_H_

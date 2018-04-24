@@ -4,19 +4,32 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
+#include "TextureManager.h"
 
 class Sprite
 {
 public:
+    Sprite(const char* fileName);
+    ~Sprite();
+
     int x, y;
-    float scale, angle;
 
-    SDL_Texture* image;
+    SDL_Texture* texture;
+    SDL_Rect srcRect;
+    SDL_Rect dstRect;
 
-    SDL_Rect* srcR;
-    SDL_Rect* dstRect;
+    void attr
+    (
+        const int _w,
+        const int _h,
+        const float scale,
+        const float angle
+    );
 
-    void getContentSize(const int _w, const int _h, const float scale);
+    void update();
+    void render();
+
+private:
 
 };
 

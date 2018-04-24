@@ -13,7 +13,7 @@ public:
     int w = 129, h = 9;
     float scale = 1, angle = 0;
 
-    Sprite* sprite;
+    static Sprite* sprite;
 
     void update();
 

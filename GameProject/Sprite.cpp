@@ -27,7 +27,6 @@ void Sprite::render()
     SDL_RenderClear(Game::renderer);
     SDL_RenderCopy(Game::renderer, texture, &srcRect, &dstRect);
     SDL_RenderPresent(Game::renderer);
-
 }
 
 Sprite::~Sprite()

@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Player.h"
 #include "Sprite.h"
+#include "Fruit.h"
 
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Event Game::event;
@@ -53,6 +54,7 @@ void Game::update()
 {
     dt++;
     listenEvents();
+    render();
     std::cout << dt << std::endl;
 }
 
@@ -72,7 +74,8 @@ void Game::listenEvents()
 void Game::render()
 {
     SDL_RenderClear(renderer);
-    //player->sprite->render();
+    Player::sprite->render();
+    Fruit::sprite->render();
     SDL_RenderPresent(renderer);
 }
 

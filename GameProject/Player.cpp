@@ -61,7 +61,7 @@ void Player::update()
     sprite->dstRect.x = x - w / 2;
     sprite->dstRect.y = y - h / 2;
 
-    sprite->render();
+    //sprite->render();
 
     listenEventFromKeyboard();
 }

@@ -7,7 +7,6 @@
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
 #include "TextureManager.h"
-#include "Fruit.h"
 
 class Game
 {

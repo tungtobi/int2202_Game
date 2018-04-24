@@ -327,11 +327,12 @@
 	<SDL2/SDL.h>
 	<SDL_image.h>
 
-1524579982 source:d:\int2202_game\gameproject\main.cpp
+1524584877 source:d:\int2202_game\gameproject\main.cpp
 	"Game.h"
 	"Sprite.h"
 	"Player.h"
 	"Fruit.h"
+	"Layer.h"
 
 1519932851 d:\int2202_game\i686-w64-mingw32_image\include\sdl2\sdl_image.h
 	"SDL.h"
@@ -349,27 +350,26 @@
 	<string>
 	<SDL_image.h>
 
-1524577061 source:d:\int2202_game\gameproject\sprite.cpp
+1524581723 source:d:\int2202_game\gameproject\sprite.cpp
 	"Sprite.h"
 
-1524579952 source:d:\int2202_game\gameproject\game.cpp
+1524581947 source:d:\int2202_game\gameproject\game.cpp
 	"Game.h"
 	"Player.h"
 	"Sprite.h"
 	"Fruit.h"
 
-1524579172 d:\int2202_game\gameproject\game.h
+1524581009 d:\int2202_game\gameproject\game.h
 	"Sprite.h"
 	<iostream>
 	<vector>
 	<SDL2/SDL.h>
 	<SDL_image.h>
 	"TextureManager.h"
-	"Fruit.h"
 
 1524575794 source:d:\int2202_game\gameproject\global.cpp
 
-1524578712 d:\int2202_game\gameproject\sprite.h
+1524580976 d:\int2202_game\gameproject\sprite.h
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL_image.h>
@@ -381,17 +381,26 @@
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
 
-1524578712 d:\int2202_game\gameproject\player.h
+1524581083 d:\int2202_game\gameproject\player.h
 	"Game.h"
 
-1524577830 source:d:\int2202_game\gameproject\player.cpp
+1524583034 source:d:\int2202_game\gameproject\player.cpp
 	"Player.h"
 
-1524579172 source:d:\int2202_game\gameproject\fruit.cpp
+1524583120 source:d:\int2202_game\gameproject\fruit.cpp
 	"Fruit.h"
 	<cstdlib>
 	<ctime>
 
-1524580321 d:\int2202_game\gameproject\fruit.h
+1524583175 d:\int2202_game\gameproject\fruit.h
 	"Game.h"
+
+1524584985 source:d:\int2202_game\gameproject\layer.cpp
+	"Layer.h"
+	"Player.h"
+	"Fruit.h"
+
+1524585139 d:\int2202_game\gameproject\layer.h
+	"Game.h"
+	<vector>
 

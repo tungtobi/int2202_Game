@@ -1,11 +1,14 @@
 #include "Player.h"
 
+extern const int SCREEN_WIDTH = 800;
+extern const int SCREEN_HEIGHT = 600;
+
 Player::Player()
 {
     sprite = new Sprite("res/player.png");
     sprite->attr(w, h, scale, angle);
-    x = 400;
-    y = 500;
+    x = SCREEN_WIDTH / 2;
+    y = SCREEN_HEIGHT - 100;
 }
 
 void Player::listenEventFromKeyboard()
@@ -45,14 +48,16 @@ void Player::listenEventFromKeyboard()
 
 bool Player::isOutsideLayer()
 {
-    if (x + w / 2 > 800)
+    if (x + w / 2 > SCREEN_WIDTH)
     {
-        x = 800 - w / 2;
+        x = SCREEN_WIDTH - w / 2;
     }
     else if (x - w / 2 < 0)
     {
         x = w / 2;
     }
+
+    return false;
 }
 
 void Player::update()

@@ -18,15 +18,12 @@ void Sprite::attr(const int _w, const int _h, const float scale, const float ang
 
 void Sprite::update()
 {
-    x = 300;
-    y++;
+
 
 }
 void Sprite::render()
 {
-    SDL_RenderClear(Game::renderer);
     SDL_RenderCopy(Game::renderer, texture, &srcRect, &dstRect);
-    SDL_RenderPresent(Game::renderer);
 }
 
 Sprite::~Sprite()

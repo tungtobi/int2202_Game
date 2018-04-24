@@ -2,6 +2,9 @@
 #include <cstdlib>
 #include <ctime>
 
+extern const int SCREEN_WIDTH = 800;
+extern const int SCREEN_HEIGHT = 600;
+
 int Fruit::getRandomPositionX(int width)
 {
     srand(time(0));
@@ -13,18 +16,19 @@ Fruit::Fruit()
     sprite = new Sprite("res/fruit.png");
     sprite->attr(w, h, scale, angle);
 
-    x = Fruit::getRandomPositionX(800);
+    x = Fruit::getRandomPositionX(SCREEN_WIDTH);
     y = -50;
 }
 
 bool Fruit::isOutsideLayer()
 {
-    if (y + h / 2 > 600)
+    if (y + h / 2 > SCREEN_HEIGHT)
     {
-        x = Fruit::getRandomPositionX(800);
+        x = Fruit::getRandomPositionX(SCREEN_WIDTH);
         y = -50;
-        return false;
+        return true;
     }
+    return false;
 }
 
 void Fruit::update()

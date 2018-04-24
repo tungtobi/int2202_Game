@@ -48,10 +48,13 @@
 			<Add directory="../i686-w64-mingw32_image/lib" />
 			<Add directory="../i686-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="Fruit.cpp" />
 		<Unit filename="Fruit.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="KeyboardController.h" />
+		<Unit filename="Layer.cpp" />
+		<Unit filename="Layer.h" />
 		<Unit filename="Map.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />

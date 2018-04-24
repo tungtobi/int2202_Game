@@ -54,7 +54,7 @@ void Game::update()
 {
     dt++;
     listenEvents();
-    render();
+    //render();
     std::cout << dt << std::endl;
 }
 
@@ -74,8 +74,8 @@ void Game::listenEvents()
 void Game::render()
 {
     SDL_RenderClear(renderer);
-    Player::sprite->render();
-    Fruit::sprite->render();
+    //Player::sprite->render();
+    //Fruit::sprite->render();
     SDL_RenderPresent(renderer);
 }
 

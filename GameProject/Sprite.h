@@ -12,23 +12,16 @@ public:
     Sprite(const char* fileName);
     ~Sprite();
 
-    int x, y;
+    int x = 0, y = 0;
 
     SDL_Texture* texture;
     SDL_Rect srcRect;
     SDL_Rect dstRect;
 
-    void attr
-    (
-        const int _w,
-        const int _h,
-        const float scale,
-        const float angle
-    );
+    void attr(const float scale, const float angle);
 
     void update();
     void render();
-
 
 private:
 

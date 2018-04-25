@@ -2,6 +2,7 @@
 #define FRUIT_H_
 
 #include "Game.h"
+#include "Player.h"
 
 class Fruit
 {
@@ -9,17 +10,20 @@ public:
     Fruit();
     ~Fruit();
 
-    int x, y, speed = 1;
+    int x, y;
+    int acceleration = 1, speed = 1;
     int w = 33, h = 33;
     float scale = 1, angle = 0;
 
     Sprite* sprite;
 
     void update();
+    void checkCaught(Player* player);
 
 private:
-    bool isOutsideLayer();
-    int getRandomPositionX(int width);
+    float dt = 0;
+    void checkOutsideLayer();
+    int generateRandom(int width);
 };
 
 #endif // FRUIT_H_

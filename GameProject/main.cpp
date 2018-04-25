@@ -3,32 +3,27 @@
 #include "Player.h"
 #include "Fruit.h"
 #include "Layer.h"
+#include "Director.h"
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
-const char* TITLE = "INT2202 4";
-const bool FULLSCREEN = false;
-const int FPS = 60;
-
+Layer* layer;
 
 int main(int argc, char* argv[])
 {
-    Game* director = new Game();
+    Game* game = new Game();
+    Director director;
 
     const int frameDelay = 1000 / FPS;
     Uint32 frameStart;
     int frameTime;
 
-    director->init(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
+    layer = new Layer();
 
-    Layer* layer = new Layer();
-
-
-    while (director->isRunning())
+    while (game->isRunning())
     {
         frameStart = SDL_GetTicks();
 
-        director->update();
+        game->update();
+        director.update();
         layer->update();
 
         frameTime = SDL_GetTicks() - frameStart;
@@ -39,6 +34,6 @@ int main(int argc, char* argv[])
         }
     }
 
-    director->clean();
+    game->clean();
     return 0;
 }

@@ -1,37 +1,67 @@
 #include "Layer.h"
 #include "Player.h"
 #include "Fruit.h"
+#include <algorithm>
 
 Layer::Layer()
 {
-    Layer::player = new Player();
-    Layer::fruit = new Fruit();
-    addFruit(fruit);
+    player = new Player();
+}
+
+void Layer::initBackground()
+{
+    background = new Sprite("res/background.png");
+    //background->attr(1, 0);
 }
 
 void Layer::addFruit(Fruit* f)
 {
-    Layer::fruits.push_back(f);
+    fruits.push_back(f);
+}
+
+void Layer::removeFruit(Fruit* f)
+{
+    fruits.erase(std::remove(fruits.begin(), fruits.end(), f));
+    f->~Fruit();
+
+    delete f;
+}
+
+void Layer::renderSprite()
+{
+    player->sprite->render();
+    for (Fruit* f : fruits)
+    {
+        if (f != NULL)
+            f->sprite->render();
+    }
 }
 
 void Layer::update()
 {
-    Layer::player->update();
+    player->update();
+
     for (Fruit* f : Layer::fruits)
     {
-        f->update();
+        if (f != NULL)
+        {
+            f->update();
+            f->checkCaught(player);
+
+        }
     }
+
     render();
 }
 
 void Layer::render()
 {
     SDL_RenderClear(Game::renderer);
-    Layer::player->sprite->render();
-    for (Fruit* f : Layer::fruits)
+    if (background != NULL)
     {
-        f->sprite->render();
+        background->render();
     }
+    renderSprite();
     SDL_RenderPresent(Game::renderer);
 }
 

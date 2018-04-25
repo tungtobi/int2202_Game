@@ -48,6 +48,9 @@
 			<Add directory="../i686-w64-mingw32_image/lib" />
 			<Add directory="../i686-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="CollisionDetection.h" />
+		<Unit filename="Director.cpp" />
+		<Unit filename="Director.h" />
 		<Unit filename="Fruit.cpp" />
 		<Unit filename="Fruit.h" />
 		<Unit filename="Game.cpp" />

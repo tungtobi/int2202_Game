@@ -8,7 +8,7 @@ SDL_Event Game::event;
 
 Game::Game()
 {
-
+    init(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
 }
 
 Game::~Game()
@@ -69,14 +69,6 @@ void Game::listenEvents()
             break;
 
     }
-}
-
-void Game::render()
-{
-    SDL_RenderClear(renderer);
-    //Player::sprite->render();
-    //Fruit::sprite->render();
-    SDL_RenderPresent(renderer);
 }
 
 void Game::clean()

@@ -327,12 +327,13 @@
 	<SDL2/SDL.h>
 	<SDL_image.h>
 
-1524587555 source:d:\int2202_game\gameproject\main.cpp
+1524660685 source:d:\int2202_game\gameproject\main.cpp
 	"Game.h"
 	"Sprite.h"
 	"Player.h"
 	"Fruit.h"
 	"Layer.h"
+	"Director.h"
 
 1519932851 d:\int2202_game\i686-w64-mingw32_image\include\sdl2\sdl_image.h
 	"SDL.h"
@@ -350,16 +351,16 @@
 	<string>
 	<SDL_image.h>
 
-1524581723 source:d:\int2202_game\gameproject\sprite.cpp
+1524657995 source:d:\int2202_game\gameproject\sprite.cpp
 	"Sprite.h"
 
-1524586756 source:d:\int2202_game\gameproject\game.cpp
+1524660653 source:d:\int2202_game\gameproject\game.cpp
 	"Game.h"
 	"Player.h"
 	"Sprite.h"
 	"Fruit.h"
 
-1524581009 d:\int2202_game\gameproject\game.h
+1524660618 d:\int2202_game\gameproject\game.h
 	"Sprite.h"
 	<iostream>
 	<vector>
@@ -369,7 +370,7 @@
 
 1524575794 source:d:\int2202_game\gameproject\global.cpp
 
-1524580976 d:\int2202_game\gameproject\sprite.h
+1524657697 d:\int2202_game\gameproject\sprite.h
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL_image.h>
@@ -381,28 +382,41 @@
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
 
-1524581083 d:\int2202_game\gameproject\player.h
+1524657868 d:\int2202_game\gameproject\player.h
 	"Game.h"
 
-1524587046 source:d:\int2202_game\gameproject\player.cpp
+1524658047 source:d:\int2202_game\gameproject\player.cpp
 	"Player.h"
 
-1524588390 source:d:\int2202_game\gameproject\fruit.cpp
+1524658063 source:d:\int2202_game\gameproject\fruit.cpp
 	"Fruit.h"
 	<cstdlib>
 	<time.h>
+	<math.h>
+	"Layer.h"
+	<random>
 
-1524583175 d:\int2202_game\gameproject\fruit.h
+1524661492 d:\int2202_game\gameproject\fruit.h
 	"Game.h"
+	"Player.h"
 
-1524587779 source:d:\int2202_game\gameproject\layer.cpp
+1524660152 source:d:\int2202_game\gameproject\layer.cpp
 	"Layer.h"
 	"Player.h"
 	"Fruit.h"
+	<algorithm>
 
-1524587785 d:\int2202_game\gameproject\layer.h
+1524660719 d:\int2202_game\gameproject\layer.h
 	"Game.h"
 	"Player.h"
 	"Fruit.h"
 	<vector>
+
+1524646741 d:\int2202_game\gameproject\director.h
+	"Game.h"
+
+1524657332 source:d:\int2202_game\gameproject\director.cpp
+	"Director.h"
+	"Fruit.h"
+	"Layer.h"
 

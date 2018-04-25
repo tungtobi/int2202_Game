@@ -1,6 +1,12 @@
 #ifndef GAME_H_
 #define GAME_H_
 
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 600
+#define TITLE "INT2202 4"
+#define FULLSCREEN false
+#define FPS 60
+
 #include "Sprite.h"
 #include <iostream>
 #include <vector>
@@ -18,8 +24,6 @@ public:
 
     void listenEvents();
     void update();
-    void render();
-    //void renderSprite(Sprite* sprite);
     void clean();
 
     bool isRunning()

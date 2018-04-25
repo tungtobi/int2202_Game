@@ -10,7 +10,7 @@ public:
     ~Player();
 
     int x, y, speed = 0;
-    int w = 129, h = 9;
+    int w, h;
     float scale = 1, angle = 0;
 
     Sprite* sprite;

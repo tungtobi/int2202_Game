@@ -3,22 +3,22 @@
 Sprite::Sprite(const char* fileName)
 {
     texture = TextureManager::LoadTexture(fileName);
+    SDL_QueryTexture(texture, NULL, NULL, &srcRect.w, &srcRect.h);
+    attr(1, 0);
+
 }
 
-void Sprite::attr(const int _w, const int _h, const float scale, const float angle)
+void Sprite::attr(const float scale, const float angle)
 {
-    srcRect.w = _w;
-    srcRect.h = _h;
     srcRect.x = 0;
     srcRect.y = 0;
 
-    dstRect.w = _w * scale;
-    dstRect.h = _h * scale;
+    dstRect.w = srcRect.w * scale;
+    dstRect.h = srcRect.h * scale;
 }
 
 void Sprite::update()
 {
-
 
 }
 void Sprite::render()
@@ -28,5 +28,5 @@ void Sprite::render()
 
 Sprite::~Sprite()
 {
-
+    delete texture;
 }

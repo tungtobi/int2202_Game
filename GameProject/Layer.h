@@ -14,11 +14,19 @@ public:
 
     std::vector <Fruit*> fruits;
     Player* player;
-    Fruit* fruit;
+
+    Sprite* background;
+
+    unsigned int score = 0;
 
     void addFruit(Fruit* f);
+    void removeFruit(Fruit* f);
     void update();
     void render();
+
+private:
+    void renderSprite();
+    void initBackground();
 };
 
 #endif // LAYER_H_

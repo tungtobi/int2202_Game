@@ -1,50 +1,72 @@
 #include "Fruit.h"
 #include <cstdlib>
 #include <time.h>
+#include <math.h>
+#include "Layer.h"
+#include <random>
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
+extern Layer* layer;
 
-int Fruit::getRandomPositionX(int width)
+int Fruit::generateRandom(int width)
 {
-    srand(time(NULL));
-    int posX = rand() % width;
-
-    return posX;
+    return rand() % width + 1;
 }
 
 Fruit::Fruit()
 {
-    sprite = new Sprite("res/fruit.png");
-    sprite->attr(w, h, scale, angle);
+    srand(time(0));
 
-    x = getRandomPositionX(SCREEN_WIDTH);
+    int type = generateRandom(2);
+
+    switch (type)
+    {
+    case 1:
+        sprite = new Sprite("res/fruit.png");
+        break;
+    case 2:
+        sprite = new Sprite("res/fruit_2.png");
+        break;
+    }
+
+    w = sprite->dstRect.w;
+    h = sprite->dstRect.h;
+
+    x = generateRandom(SCREEN_WIDTH);
     y = -50;
 }
 
-bool Fruit::isOutsideLayer()
+void Fruit::checkOutsideLayer()
 {
     if (y + h / 2 > SCREEN_HEIGHT)
     {
-        x = getRandomPositionX(SCREEN_WIDTH) / 2;
-        std::cout << x << std::endl;
-        y = -50;
-        //return true;
+        layer->removeFruit(this);
     }
-    //return false;
+}
+
+void Fruit::checkCaught(Player* player)
+{
+    if (player->y - y >= 0 && player->y - y <= (h + player->h) / 2 && abs(player->x - x) <= player->w / 2)
+    {
+        layer->removeFruit(this);
+    }
+
 }
 
 void Fruit::update()
 {
-    y += 1;
+    dt += 0.2;
+
+    y = -50 + acceleration * dt * dt / 2;
+
     sprite->dstRect.x = x - w / 2;
     sprite->dstRect.y = y - h / 2;
 
-    isOutsideLayer();
+    checkOutsideLayer();
 
 }
 
 Fruit::~Fruit()
 {
-
+    SDL_DestroyTexture(sprite->texture);
+    delete sprite;
 }

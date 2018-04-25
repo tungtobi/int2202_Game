@@ -1,12 +1,13 @@
 #include "Player.h"
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
+//const int SCREEN_WIDTH = 800;
+//const int SCREEN_HEIGHT = 600;
 
 Player::Player()
 {
     sprite = new Sprite("res/player.png");
-    sprite->attr(w, h, scale, angle);
+    w = sprite->dstRect.w;
+    h = sprite->dstRect.h;
     x = SCREEN_WIDTH / 2;
     y = SCREEN_HEIGHT - 100;
 }
@@ -20,14 +21,16 @@ void Player::listenEventFromKeyboard()
         case SDLK_LEFT:
             if (!isOutsideLayer())
             {
-                speed = -1;
+                speed = -3;
             }
             break;
         case SDLK_RIGHT:
             if (!isOutsideLayer())
             {
-                speed = 1;
+                speed = 3;
             }
+            break;
+        case SDLK_UP:
             break;
         }
     }
@@ -57,7 +60,7 @@ bool Player::isOutsideLayer()
         x = w / 2;
     }
 
-    //return false;
+    return false;
 }
 
 void Player::update()

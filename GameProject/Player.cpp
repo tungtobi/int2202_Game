@@ -1,7 +1,7 @@
 #include "Player.h"
+#include "Layer.h"
 
-//const int SCREEN_WIDTH = 800;
-//const int SCREEN_HEIGHT = 600;
+extern Layer* layer;
 
 Player::Player()
 {
@@ -31,6 +31,7 @@ void Player::listenEventFromKeyboard()
             }
             break;
         case SDLK_UP:
+            layer->score++;
             break;
         }
     }

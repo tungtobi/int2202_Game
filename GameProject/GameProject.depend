@@ -327,13 +327,12 @@
 	<SDL2/SDL.h>
 	<SDL_image.h>
 
-1524660685 source:d:\int2202_game\gameproject\main.cpp
+1524684218 source:d:\int2202_game\gameproject\main.cpp
 	"Game.h"
 	"Sprite.h"
 	"Player.h"
 	"Fruit.h"
 	"Layer.h"
-	"Director.h"
 
 1519932851 d:\int2202_game\i686-w64-mingw32_image\include\sdl2\sdl_image.h
 	"SDL.h"
@@ -351,16 +350,18 @@
 	<string>
 	<SDL_image.h>
 
-1524657995 source:d:\int2202_game\gameproject\sprite.cpp
+1524685700 source:d:\int2202_game\gameproject\sprite.cpp
 	"Sprite.h"
 
-1524660653 source:d:\int2202_game\gameproject\game.cpp
+1524684029 source:d:\int2202_game\gameproject\game.cpp
 	"Game.h"
 	"Player.h"
 	"Sprite.h"
 	"Fruit.h"
+	<SDL2/SDL_ttf.h>
+	"Layer.h"
 
-1524660618 d:\int2202_game\gameproject\game.h
+1524686144 d:\int2202_game\gameproject\game.h
 	"Sprite.h"
 	<iostream>
 	<vector>
@@ -370,7 +371,7 @@
 
 1524575794 source:d:\int2202_game\gameproject\global.cpp
 
-1524657697 d:\int2202_game\gameproject\sprite.h
+1524685611 d:\int2202_game\gameproject\sprite.h
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL_image.h>
@@ -382,13 +383,14 @@
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
 
-1524657868 d:\int2202_game\gameproject\player.h
+1524684430 d:\int2202_game\gameproject\player.h
 	"Game.h"
 
-1524658047 source:d:\int2202_game\gameproject\player.cpp
+1524670776 source:d:\int2202_game\gameproject\player.cpp
 	"Player.h"
+	"Layer.h"
 
-1524658063 source:d:\int2202_game\gameproject\fruit.cpp
+1524685752 source:d:\int2202_game\gameproject\fruit.cpp
 	"Fruit.h"
 	<cstdlib>
 	<time.h>
@@ -396,21 +398,23 @@
 	"Layer.h"
 	<random>
 
-1524661492 d:\int2202_game\gameproject\fruit.h
+1524684397 d:\int2202_game\gameproject\fruit.h
 	"Game.h"
 	"Player.h"
 
-1524660152 source:d:\int2202_game\gameproject\layer.cpp
+1524685016 source:d:\int2202_game\gameproject\layer.cpp
 	"Layer.h"
 	"Player.h"
 	"Fruit.h"
 	<algorithm>
+	<cstdlib>
 
-1524660719 d:\int2202_game\gameproject\layer.h
-	"Game.h"
+1524684967 d:\int2202_game\gameproject\layer.h
 	"Player.h"
 	"Fruit.h"
+	"TextManager.h"
 	<vector>
+	"Director.h"
 
 1524646741 d:\int2202_game\gameproject\director.h
 	"Game.h"
@@ -419,4 +423,16 @@
 	"Director.h"
 	"Fruit.h"
 	"Layer.h"
+
+1524683042 source:d:\int2202_game\gameproject\textmanager.cpp
+	"TextManager.h"
+
+1524684463 d:\int2202_game\gameproject\textmanager.h
+	"Game.h"
+	<SDL2/SDL_ttf.h>
+
+1454362933 d:\int2202_game\i686-w64-mingw32_ttf\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
 

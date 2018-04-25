@@ -2,13 +2,18 @@
 #include "Player.h"
 #include "Sprite.h"
 #include "Fruit.h"
+#include <SDL2/SDL_ttf.h>
+#include "Layer.h"
 
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Event Game::event;
+const int frameDelay = 1000 / FPS;
+Layer* layer;
 
 Game::Game()
 {
     init(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
+    layer = new Layer();
 }
 
 Game::~Game()
@@ -41,21 +46,38 @@ void Game::init(const char* title, int x, int y, const int width, const int heig
             std::cout << "Renderer created!" << std::endl;
         }
 
-        _isRunning = true;
+        isRunning = true;
     }
     else
     {
-        _isRunning = false;
+        isRunning = false;
     }
 
+    TTF_Init();
+
+    if (TTF_Init() < 0)
+    {
+        std::cout << "TTF Error!" << std::endl;
+    }
 }
 
 void Game::update()
 {
-    dt++;
-    listenEvents();
-    //render();
-    //std::cout << dt << std::endl;
+    while (isRunning)
+    {
+        Uint32 frameStart = SDL_GetTicks();
+
+        listenEvents();
+
+        layer->update();
+
+        int frameTime = SDL_GetTicks() - frameStart;
+
+        if (frameDelay > frameTime)
+        {
+            SDL_Delay(frameDelay - frameTime);
+        }
+    }
 }
 
 void Game::listenEvents()
@@ -65,9 +87,8 @@ void Game::listenEvents()
     switch (event.type)
     {
         case SDL_QUIT:
-            _isRunning = false;
+            isRunning = false;
             break;
-
     }
 }
 
@@ -75,6 +96,8 @@ void Game::clean()
 {
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
+    TTF_Quit();
+    IMG_Quit();
     SDL_Quit();
     std::cout << "Quit SDL" << std::endl;
 }

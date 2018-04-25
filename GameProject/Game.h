@@ -20,24 +20,21 @@ public:
     Game();
     ~Game();
 
-    void init(const char* title, int x, int y, const int width, const int height, const bool fullscreen);
-
-    void listenEvents();
     void update();
     void clean();
-
-    bool isRunning()
-    {
-        return _isRunning;
-    }
 
     static SDL_Renderer* renderer;
     static SDL_Event event;
 
 private:
     int dt = 0;
-    bool _isRunning;
+
+    bool isRunning;
+
     SDL_Window* window;
+
+    void listenEvents();
+    void init(const char* title, int x, int y, const int width, const int height, const bool fullscreen);
 };
 
 #endif // GAME_H_

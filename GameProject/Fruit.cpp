@@ -21,7 +21,7 @@ Fruit::Fruit()
     switch (type)
     {
     case 1:
-        sprite = new Sprite("res/fruit.png");
+        sprite = new Sprite("res/fruit1.png");
         break;
     case 2:
         sprite = new Sprite("res/fruit_2.png");
@@ -48,6 +48,8 @@ void Fruit::checkCaught(Player* player)
     if (player->y - y >= 0 && player->y - y <= (h + player->h) / 2 && abs(player->x - x) <= player->w / 2)
     {
         layer->removeFruit(this);
+        layer->score++;
+        layer->updateScore();
     }
 
 }
@@ -56,7 +58,9 @@ void Fruit::update()
 {
     dt += 0.2;
 
-    y = -50 + acceleration * dt * dt / 2;
+    sprite->angle++;
+
+    y = -50 + speed * dt + acceleration * dt * dt / 2;
 
     sprite->dstRect.x = x - w / 2;
     sprite->dstRect.y = y - h / 2;

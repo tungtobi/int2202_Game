@@ -9,9 +9,9 @@ public:
     Player();
     ~Player();
 
-    int x, y, speed = 0;
-    int w, h;
-    float scale = 1, angle = 0;
+    int x, y, w, h;
+    int speed = 0;
+    float scale = 1;
 
     Sprite* sprite;
 

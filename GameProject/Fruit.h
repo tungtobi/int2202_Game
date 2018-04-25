@@ -10,10 +10,10 @@ public:
     Fruit();
     ~Fruit();
 
-    int x, y;
-    int acceleration = 1, speed = 1;
-    int w = 33, h = 33;
-    float scale = 1, angle = 0;
+    int x, y, w, h;
+    float scale = 1;
+
+    int acceleration = 3, speed = 1;
 
     Sprite* sprite;
 

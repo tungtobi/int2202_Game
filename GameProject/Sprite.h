@@ -15,8 +15,11 @@ public:
     int x = 0, y = 0;
 
     SDL_Texture* texture;
-    SDL_Rect srcRect;
-    SDL_Rect dstRect;
+    SDL_Rect srcRect, dstRect;
+
+    double angle = 0;
+
+    SDL_Point anchorPoint;
 
     void attr(const float scale, const float angle);
 

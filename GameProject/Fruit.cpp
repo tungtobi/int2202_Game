@@ -4,6 +4,9 @@
 #include <math.h>
 #include "Layer.h"
 #include <random>
+#include <string>
+
+#define MAX_TYPE 4
 
 extern Layer* layer;
 
@@ -12,21 +15,23 @@ int Fruit::generateRandom(int width)
     return rand() % width + 1;
 }
 
+std::string Fruit::loadFileName(int type)
+{
+    std::string path1 = "res/fruit",
+    path2 = "0",
+    path3 = ".png";
+    path2[0] = char(type + '0');
+    return path1 + path2 + path3;
+}
+
 Fruit::Fruit()
 {
     srand(time(0));
 
-    int type = generateRandom(2);
+    type = generateRandom(MAX_TYPE);
+    std::string path = loadFileName(type);
 
-    switch (type)
-    {
-    case 1:
-        sprite = new Sprite("res/fruit1.png");
-        break;
-    case 2:
-        sprite = new Sprite("res/fruit_2.png");
-        break;
-    }
+    sprite = new Sprite(path.c_str());
 
     w = sprite->dstRect.w;
     h = sprite->dstRect.h;
@@ -48,7 +53,19 @@ void Fruit::checkCaught(Player* player)
     if (player->y - y >= 0 && player->y - y <= (h + player->h) / 2 && abs(player->x - x) <= player->w / 2)
     {
         layer->removeFruit(this);
-        layer->score++;
+
+        switch (type)
+        {
+        case 1:
+        case 2:
+        case 3:
+            layer->score++;
+            break;
+        case 4:
+            layer->score /= 2;
+            break;
+        }
+
         layer->updateScore();
     }
 
@@ -58,7 +75,7 @@ void Fruit::update()
 {
     dt += 0.2;
 
-    sprite->angle++;
+    sprite->angle = acceleration * dt * dt / 6;
 
     y = -50 + speed * dt + acceleration * dt * dt / 2;
 

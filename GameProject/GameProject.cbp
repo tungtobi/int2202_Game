@@ -50,17 +50,14 @@
 			<Add directory="../i686-w64-mingw32/lib" />
 			<Add directory="../i686-w64-mingw32_ttf/lib" />
 		</Linker>
-		<Unit filename="CollisionDetection.h" />
 		<Unit filename="Director.cpp" />
 		<Unit filename="Director.h" />
 		<Unit filename="Fruit.cpp" />
 		<Unit filename="Fruit.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
-		<Unit filename="KeyboardController.h" />
 		<Unit filename="Layer.cpp" />
 		<Unit filename="Layer.h" />
-		<Unit filename="Map.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
 		<Unit filename="Sprite.cpp" />
@@ -69,7 +66,6 @@
 		<Unit filename="TextManager.h" />
 		<Unit filename="TextureManager.cpp" />
 		<Unit filename="TextureManager.h" />
-		<Unit filename="global.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

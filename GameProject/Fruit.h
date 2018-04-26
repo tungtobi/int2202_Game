@@ -21,9 +21,11 @@ public:
     void checkCaught(Player* player);
 
 private:
+    int type;
     float dt = 0;
     void checkOutsideLayer();
     int generateRandom(int width);
+    std::string loadFileName(int type);
 };
 
 #endif // FRUIT_H_

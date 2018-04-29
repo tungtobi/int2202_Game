@@ -1,6 +1,10 @@
 #ifndef TEXTMANAGER_H_
 #define TEXTMANAGER_H_
 
+#define LEFT_ALIGN 0
+#define CENTER_ALIGN 1
+#define RIGHT_ALIGN 2
+
 #include "Game.h"
 #include <SDL2/SDL_ttf.h>
 
@@ -14,11 +18,11 @@ public:
     int size;
 
     TTF_Font* font;
-    SDL_Color color;
+    SDL_Color color = {255, 255, 255};
 
     SDL_Texture* texture;
 
-    void render(const int _x, const int _y);
+    void render(const int _x, const int _y, const int align);
     void initTexture();
 
 private:

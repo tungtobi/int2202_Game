@@ -5,9 +5,10 @@ extern Layer* layer;
 
 Player::Player()
 {
-    sprite = new Sprite("res/player.png");
-    w = sprite->dstRect.w;
-    h = sprite->dstRect.h;
+    animation = new Animation("res/playerAnimation");
+    w = animation->sprite->dstRect.w;
+    h = animation->sprite->dstRect.h;
+
     x = SCREEN_WIDTH / 2;
     y = SCREEN_HEIGHT - 100;
 }
@@ -21,14 +22,16 @@ void Player::listenEventFromKeyboard()
         case SDLK_LEFT:
             if (!isOutsideLayer() && !isStuck())
             {
-                sprite->flip = SDL_FLIP_HORIZONTAL;
+                animation->sprite->flip = SDL_FLIP_HORIZONTAL;
+                animation->runAnimation();
                 speed = -5;
             }
             break;
         case SDLK_RIGHT:
             if (!isOutsideLayer() && !isStuck())
             {
-                sprite->flip = SDL_FLIP_NONE;
+                animation->sprite->flip = SDL_FLIP_NONE;
+                animation->runAnimation();
                 speed = 5;
             }
             break;
@@ -40,10 +43,12 @@ void Player::listenEventFromKeyboard()
         switch (Game::event.key.keysym.sym)
         {
         case SDLK_LEFT:
-            speed = 0;
-            break;
         case SDLK_RIGHT:
             speed = 0;
+            if (!isStuck())
+            {
+                animation->initNormalSprite();
+            }
             break;
         }
     }
@@ -66,10 +71,8 @@ bool Player::isOutsideLayer()
 void Player::update()
 {
     x += speed;
-    sprite->dstRect.x = x - w / 2;
-    sprite->dstRect.y = y - h / 2;
-    w = sprite->dstRect.w;
-    h = sprite->dstRect.h;
+    animation->sprite->dstRect.x = x - w / 2;
+    animation->sprite->dstRect.y = y - h / 2;
 
     listenEventFromKeyboard();
 }
@@ -77,22 +80,23 @@ void Player::update()
 void Player::getStuck()
 {
     speed = 0;
-    sprite->loadFrame("res/playerHurt.png");
+    animation->sprite->loadFrame("res/playerHurt.png");
     timeStuck = SDL_GetTicks();
 }
 
 bool Player::isStuck()
 {
+    bool result;
     if (SDL_GetTicks() - timeStuck >= 3000)
     {
         timeStuck = 0;
-        sprite->loadFrame("res/player.png");
-        return false;
+        result = false;
     }
     else if (timeStuck > 0)
     {
-        return true;
+        result = true;
     }
+    return result;
 }
 
 Player::~Player()

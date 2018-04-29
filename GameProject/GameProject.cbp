@@ -50,6 +50,8 @@
 			<Add directory="../i686-w64-mingw32/lib" />
 			<Add directory="../i686-w64-mingw32_ttf/lib" />
 		</Linker>
+		<Unit filename="Animation.cpp" />
+		<Unit filename="Animation.h" />
 		<Unit filename="Director.cpp" />
 		<Unit filename="Director.h" />
 		<Unit filename="Fruit.cpp" />

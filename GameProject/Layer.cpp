@@ -6,8 +6,8 @@ Layer::Layer()
 {
     initBackground();
     player = new Player();
-    scoreLabel = new Text("res/tt0524m_.ttf", 40);
-    timeLabel = new Text("res/tt0524m_.ttf", 40);
+    scoreLabel = new Text("res/Maplestory Bold.ttf", 24);
+    timeLabel = new Text("res/Maplestory Bold.ttf", 30);
     updateScore();
 }
 
@@ -31,7 +31,7 @@ void Layer::removeFruit(Fruit* f)
 
 void Layer::renderSprite()
 {
-    player->sprite->render();
+    player->animation->sprite->render();
     for (Fruit* f : fruits)
     {
         if (f != NULL)
@@ -67,20 +67,22 @@ void Layer::updateScore()
 
 void Layer::updateTime()
 {
-    timeLabel->para = convertIntToStr(time - SDL_GetTicks() / 1000) + 's';
+    int timeLeft = time - SDL_GetTicks() / 1000;
+    timeLabel->para = convertIntToStr(timeLeft) + 's';
+    if (timeLeft <= 10)
+    {
+        timeLabel->color = {255, 0, 0};
+    }
     timeLabel->initTexture();
 }
 
 void Layer::render()
 {
     SDL_RenderClear(Game::renderer);
-    if (background != NULL)
-    {
-        background->render();
-    }
-    scoreLabel->render(40,  40);
-    timeLabel->render(SCREEN_WIDTH / 2, 40);
+    background->render();
     renderSprite();
+    scoreLabel->render(60, 40, LEFT_ALIGN);
+    timeLabel->render(SCREEN_WIDTH / 2, 40, CENTER_ALIGN);
 
     SDL_RenderPresent(Game::renderer);
 }

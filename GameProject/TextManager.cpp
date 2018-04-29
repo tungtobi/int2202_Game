@@ -2,17 +2,15 @@
 
 Text::Text(const char* path, const int _size)
 {
-
     size = _size;
     font = TTF_OpenFont(path, size);
     std::cout << "Text created!" << std::endl;
+
     initTexture();
 }
 
 void Text::initTexture()
 {
-    color = {255, 255, 255};
-    color.a = 0;
     SDL_Surface* textSurface = TTF_RenderText_Solid(font, para.c_str(), color);
     texture = SDL_CreateTextureFromSurface(Game::renderer, textSurface);
     SDL_FreeSurface(textSurface);
@@ -21,9 +19,21 @@ void Text::initTexture()
     SDL_QueryTexture(texture, NULL, NULL, &dstRect.w, &dstRect.h);
 }
 
-void Text::render(const int _x, const int _y)
+void Text::render(const int _x, const int _y, const int align)
 {
-    dstRect.x = _x - dstRect.w / 2;
+    switch (align)
+    {
+    case CENTER_ALIGN:
+        dstRect.x = _x - dstRect.w / 2;
+        break;
+    case LEFT_ALIGN:
+        dstRect.x = _x;
+        break;
+    case RIGHT_ALIGN:
+        dstRect.x = _x + dstRect.w / 2;
+        break;
+    }
+
     dstRect.y = _y - dstRect.h / 2;
 
     SDL_RenderCopy(Game::renderer, texture, NULL, &dstRect);

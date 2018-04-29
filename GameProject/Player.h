@@ -3,6 +3,7 @@
 
 #include "Game.h"
 #include "Sprite.h"
+#include "Animation.h"
 
 class Player
 {
@@ -15,6 +16,7 @@ public:
     float scale = 1;
 
     Sprite* sprite;
+    Animation* animation;
 
     void update();
     void getStuck();

@@ -7,12 +7,9 @@
 #define FULLSCREEN false
 #define FPS 60
 
-#include "Sprite.h"
 #include <iostream>
-#include <vector>
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
-#include "TextureManager.h"
 
 class Game
 {

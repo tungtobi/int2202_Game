@@ -11,7 +11,8 @@ Text::Text(const char* path, const int _size)
 
 void Text::initTexture()
 {
-    color = {90, 100, 115};
+    color = {255, 255, 255};
+    color.a = 0;
     SDL_Surface* textSurface = TTF_RenderText_Solid(font, para.c_str(), color);
     texture = SDL_CreateTextureFromSurface(Game::renderer, textSurface);
     SDL_FreeSurface(textSurface);

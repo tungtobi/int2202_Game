@@ -1,20 +1,19 @@
 #include "Layer.h"
-#include "Player.h"
-#include "Fruit.h"
 #include <algorithm>
 #include <cstdlib>
 
 Layer::Layer()
 {
+    initBackground();
     player = new Player();
-    scoreLabel = new Text("res/tt0524m_.ttf", 400);
+    scoreLabel = new Text("res/tt0524m_.ttf", 40);
+    timeLabel = new Text("res/tt0524m_.ttf", 40);
     updateScore();
 }
 
 void Layer::initBackground()
 {
     background = new Sprite("res/background.png");
-
 }
 
 void Layer::addFruit(Fruit* f)
@@ -55,6 +54,8 @@ void Layer::update()
         }
     }
 
+    updateTime();
+
     render();
 }
 
@@ -62,7 +63,12 @@ void Layer::updateScore()
 {
     scoreLabel->para = convertIntToStr(score);
     scoreLabel->initTexture();
-    std::cout << "Score: " << convertIntToStr(score) << std::endl;
+}
+
+void Layer::updateTime()
+{
+    timeLabel->para = convertIntToStr(time - SDL_GetTicks() / 1000) + 's';
+    timeLabel->initTexture();
 }
 
 void Layer::render()
@@ -72,7 +78,8 @@ void Layer::render()
     {
         background->render();
     }
-    scoreLabel->render(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+    scoreLabel->render(40,  40);
+    timeLabel->render(SCREEN_WIDTH / 2, 40);
     renderSprite();
 
     SDL_RenderPresent(Game::renderer);

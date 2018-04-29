@@ -19,19 +19,18 @@ void Player::listenEventFromKeyboard()
         switch (Game::event.key.keysym.sym)
         {
         case SDLK_LEFT:
-            if (!isOutsideLayer())
+            if (!isOutsideLayer() && !isStuck())
             {
-                speed = -3;
+                sprite->flip = SDL_FLIP_HORIZONTAL;
+                speed = -5;
             }
             break;
         case SDLK_RIGHT:
-            if (!isOutsideLayer())
+            if (!isOutsideLayer() && !isStuck())
             {
-                speed = 3;
+                sprite->flip = SDL_FLIP_NONE;
+                speed = 5;
             }
-            break;
-        case SDLK_UP:
-            layer->score++;
             break;
         }
     }
@@ -69,10 +68,31 @@ void Player::update()
     x += speed;
     sprite->dstRect.x = x - w / 2;
     sprite->dstRect.y = y - h / 2;
-
-    //sprite->render();
+    w = sprite->dstRect.w;
+    h = sprite->dstRect.h;
 
     listenEventFromKeyboard();
+}
+
+void Player::getStuck()
+{
+    speed = 0;
+    sprite->loadFrame("res/playerHurt.png");
+    timeStuck = SDL_GetTicks();
+}
+
+bool Player::isStuck()
+{
+    if (SDL_GetTicks() - timeStuck >= 3000)
+    {
+        timeStuck = 0;
+        sprite->loadFrame("res/player.png");
+        return false;
+    }
+    else if (timeStuck > 0)
+    {
+        return true;
+    }
 }
 
 Player::~Player()

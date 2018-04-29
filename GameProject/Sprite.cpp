@@ -2,6 +2,11 @@
 
 Sprite::Sprite(const char* fileName)
 {
+    loadFrame(fileName);
+}
+
+void Sprite::loadFrame(const char* fileName)
+{
     texture = TextureManager::LoadTexture(fileName);
     SDL_QueryTexture(texture, NULL, NULL, &srcRect.w, &srcRect.h);
     attr(1, 0);
@@ -32,7 +37,7 @@ void Sprite::render()
         &dstRect,
         angle,
         &anchorPoint,
-        SDL_FLIP_NONE
+        flip
     );
 }
 

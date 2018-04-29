@@ -28,6 +28,9 @@ public:
 
 private:
     Text* scoreLabel;
+    Text* timeLabel;
+    Uint32 time = 120;
+    void updateTime();
     Director director;
     void renderSprite();
     void initBackground();

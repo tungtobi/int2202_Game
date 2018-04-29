@@ -1,9 +1,6 @@
 #ifndef SPRITE_H_
 #define SPRITE_H_
 
-#include <iostream>
-#include <SDL2/SDL.h>
-#include <SDL_image.h>
 #include "TextureManager.h"
 
 class Sprite
@@ -22,12 +19,11 @@ public:
     SDL_Point anchorPoint;
 
     void attr(const float scale, const float angle);
-
+    void loadFrame(const char* fileName);
     void update();
     void render();
 
-private:
-
+    SDL_RendererFlip flip = SDL_FLIP_NONE;
 };
 
 #endif // SPRITE_H_

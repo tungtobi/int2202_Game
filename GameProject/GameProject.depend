@@ -350,7 +350,7 @@
 	<string>
 	<SDL_image.h>
 
-1524686266 source:d:\int2202_game\gameproject\sprite.cpp
+1524910476 source:d:\int2202_game\gameproject\sprite.cpp
 	"Sprite.h"
 
 1524686153 source:d:\int2202_game\gameproject\game.cpp
@@ -361,20 +361,14 @@
 	<SDL2/SDL_ttf.h>
 	"Layer.h"
 
-1524686224 d:\int2202_game\gameproject\game.h
-	"Sprite.h"
+1524987539 d:\int2202_game\gameproject\game.h
 	<iostream>
-	<vector>
 	<SDL2/SDL.h>
 	<SDL_image.h>
-	"TextureManager.h"
 
 1524575794 source:d:\int2202_game\gameproject\global.cpp
 
-1524686254 d:\int2202_game\gameproject\sprite.h
-	<iostream>
-	<SDL2/SDL.h>
-	<SDL_image.h>
+1524987595 d:\int2202_game\gameproject\sprite.h
 	"TextureManager.h"
 
 1524576578 d:\int2202_game\gameproject\texturemanager.h
@@ -383,14 +377,16 @@
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
 
-1524686298 d:\int2202_game\gameproject\player.h
+1524987553 d:\int2202_game\gameproject\player.h
 	"Game.h"
+	"Sprite.h"
 
-1524670776 source:d:\int2202_game\gameproject\player.cpp
+1524987470 source:d:\int2202_game\gameproject\player.cpp
 	"Player.h"
 	"Layer.h"
+	<ctime>
 
-1524721816 source:d:\int2202_game\gameproject\fruit.cpp
+1524984492 source:d:\int2202_game\gameproject\fruit.cpp
 	"Fruit.h"
 	<cstdlib>
 	<time.h>
@@ -399,18 +395,18 @@
 	<random>
 	<string>
 
-1524721619 d:\int2202_game\gameproject\fruit.h
+1524983212 d:\int2202_game\gameproject\fruit.h
 	"Game.h"
 	"Player.h"
 
-1524685016 source:d:\int2202_game\gameproject\layer.cpp
+1524986426 source:d:\int2202_game\gameproject\layer.cpp
 	"Layer.h"
 	"Player.h"
 	"Fruit.h"
 	<algorithm>
 	<cstdlib>
 
-1524686580 d:\int2202_game\gameproject\layer.h
+1524987704 d:\int2202_game\gameproject\layer.h
 	"Player.h"
 	"Fruit.h"
 	"TextManager.h"
@@ -425,7 +421,7 @@
 	"Fruit.h"
 	"Layer.h"
 
-1524683042 source:d:\int2202_game\gameproject\textmanager.cpp
+1524889575 source:d:\int2202_game\gameproject\textmanager.cpp
 	"TextManager.h"
 
 1524686340 d:\int2202_game\gameproject\textmanager.h
@@ -436,4 +432,6 @@
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
+
+1524987301 d:\int2202_game\gameproject\res.h
 

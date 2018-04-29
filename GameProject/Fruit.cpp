@@ -1,10 +1,10 @@
-#include "Fruit.h"
 #include <cstdlib>
 #include <time.h>
 #include <math.h>
-#include "Layer.h"
 #include <random>
 #include <string>
+#include "Fruit.h"
+#include "Layer.h"
 
 #define MAX_TYPE 4
 
@@ -36,7 +36,16 @@ Fruit::Fruit()
     w = sprite->dstRect.w;
     h = sprite->dstRect.h;
 
-    x = generateRandom(SCREEN_WIDTH);
+    if (type != 4)
+    {
+        x = generateRandom(SCREEN_WIDTH);
+    }
+    else
+    {
+        speed = 2;
+        acceleration = 5;
+        x = layer->player->x;
+    }
     y = -50;
 }
 
@@ -63,12 +72,12 @@ void Fruit::checkCaught(Player* player)
             break;
         case 4:
             layer->score /= 2;
+            player->getStuck();
             break;
         }
 
         layer->updateScore();
     }
-
 }
 
 void Fruit::update()

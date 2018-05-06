@@ -5,8 +5,9 @@
 #include <string>
 #include "Fruit.h"
 #include "Layer.h"
+#include "Explosion.h"
 
-#define MAX_TYPE 4
+#define MAX_TYPE 5
 
 extern Layer* layer;
 
@@ -29,6 +30,7 @@ Fruit::Fruit()
     srand(time(0));
 
     type = generateRandom(MAX_TYPE);
+
     std::string path = loadFileName(type);
 
     sprite = new Sprite(path.c_str());
@@ -44,22 +46,25 @@ Fruit::Fruit()
     {
         speed = 2;
         acceleration = 5;
-        x = layer->player->x;
+        if (layer)
+        x = layer->player.x;
     }
     y = -50;
 }
 
 void Fruit::checkOutsideLayer()
 {
-    if (y + h / 2 > SCREEN_HEIGHT)
+    if (y + h / 2 > SCREEN_HEIGHT - 70)
     {
+        if (layer)
         layer->removeFruit(this);
     }
 }
 
-void Fruit::checkCaught(Player* player)
+void Fruit::checkCaught(Player& player)
 {
-    if (player->y - y >= 0 && player->y - y <= (h + player->h) / 2 && abs(player->x - x) <= player->w / 2)
+    if (layer)
+    if (player.y - y >= 0 && player.y - y <= (h + player.h) / 2 && abs(player.x - x) <= player.w / 2)
     {
         layer->removeFruit(this);
 
@@ -72,7 +77,10 @@ void Fruit::checkCaught(Player* player)
             break;
         case 4:
             layer->score /= 2;
-            player->getStuck();
+            player.getStuck();
+            break;
+        case 5:
+            layer->time += 5.0;
             break;
         }
 
@@ -82,21 +90,23 @@ void Fruit::checkCaught(Player* player)
 
 void Fruit::update()
 {
-    dt += 0.2;
+    if (!layer->isPause)
+    {
+        dt += 0.2;
+    }
 
     sprite->angle = acceleration * dt * dt / 6;
 
     y = -50 + speed * dt + acceleration * dt * dt / 2;
 
-    sprite->dstRect.x = x - w / 2;
-    sprite->dstRect.y = y - h / 2;
+    sprite->setPosition(x, y);
 
     checkOutsideLayer();
-
 }
 
 Fruit::~Fruit()
 {
-    SDL_DestroyTexture(sprite->texture);
     delete sprite;
+    sprite = NULL;
+    std::cout << "Delete fruit" << std::endl;
 }

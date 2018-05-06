@@ -7,6 +7,7 @@ Text::Text(const char* path, const int _size)
     std::cout << "Text created!" << std::endl;
 
     initTexture();
+
 }
 
 void Text::initTexture()
@@ -30,13 +31,20 @@ void Text::render(const int _x, const int _y, const int align)
         dstRect.x = _x;
         break;
     case RIGHT_ALIGN:
-        dstRect.x = _x + dstRect.w / 2;
+        dstRect.x = _x - dstRect.w;
         break;
     }
 
     dstRect.y = _y - dstRect.h / 2;
 
     SDL_RenderCopy(Game::renderer, texture, NULL, &dstRect);
+}
+
+Text::~Text()
+{
+    delete font;
+    SDL_DestroyTexture(texture);
+    delete texture;
 }
 
 std::string convertIntToStr(unsigned int number)

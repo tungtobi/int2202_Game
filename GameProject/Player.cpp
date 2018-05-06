@@ -3,14 +3,17 @@
 
 extern Layer* layer;
 
-Player::Player()
+Player::Player(const int type)
 {
-    animation = new Animation("res/playerAnimation");
+    id = type;
+
+    animation = new Animation(res.normal);
+
     w = animation->sprite->dstRect.w;
     h = animation->sprite->dstRect.h;
 
     x = SCREEN_WIDTH / 2;
-    y = SCREEN_HEIGHT - 100;
+    y = SCREEN_HEIGHT - 105;
 }
 
 void Player::listenEventFromKeyboard()
@@ -20,21 +23,31 @@ void Player::listenEventFromKeyboard()
         switch (Game::event.key.keysym.sym)
         {
         case SDLK_LEFT:
-            if (!isOutsideLayer() && !isStuck())
+            if (!isOutsideLayer() && !isStuck() && !layer->isPause)
             {
                 animation->sprite->flip = SDL_FLIP_HORIZONTAL;
-                animation->runAnimation();
                 speed = -5;
             }
             break;
         case SDLK_RIGHT:
-            if (!isOutsideLayer() && !isStuck())
+            if (!isOutsideLayer() && !isStuck() && !layer->isPause)
             {
                 animation->sprite->flip = SDL_FLIP_NONE;
-                animation->runAnimation();
                 speed = 5;
             }
             break;
+        case SDLK_p:
+            layer->isPause = !layer->isPause;
+            speed = 0;
+            break;
+        case SDLK_UP:
+
+            break;
+        }
+
+        if (speed != 0)
+        {
+            animation->runAnimation();
         }
     }
 
@@ -54,6 +67,17 @@ void Player::listenEventFromKeyboard()
     }
 }
 
+void Player::removeRock()
+{
+    /*
+    if (rock)
+    {
+        delete rock;
+        rock = NULL;
+    }
+    */
+}
+
 bool Player::isOutsideLayer()
 {
     if (x + w / 2 > SCREEN_WIDTH)
@@ -71,16 +95,32 @@ bool Player::isOutsideLayer()
 void Player::update()
 {
     x += speed;
-    animation->sprite->dstRect.x = x - w / 2;
-    animation->sprite->dstRect.y = y - h / 2;
-
+    animation->sprite->setPosition(x, y);
     listenEventFromKeyboard();
+
+    /*
+    if (rock)
+    {
+        rock->update();
+    }
+    */
+}
+
+void Player::render()
+{
+    animation->sprite->render();
+    /*
+    if (rock)
+    {
+        rock->sprite->render();
+    }
+    */
 }
 
 void Player::getStuck()
 {
     speed = 0;
-    animation->sprite->loadFrame("res/playerHurt.png");
+    animation->sprite->loadFrame(res.hurted);
     timeStuck = SDL_GetTicks();
 }
 
@@ -101,5 +141,9 @@ bool Player::isStuck()
 
 Player::~Player()
 {
+    delete animation;
 
+    //if (rock)
+        //delete rock;
+    std::cout << "Delete Player" << std::endl;
 }

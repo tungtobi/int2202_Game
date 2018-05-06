@@ -9,21 +9,19 @@ public:
     Sprite(const char* fileName);
     ~Sprite();
 
-    int x = 0, y = 0;
-
-    SDL_Texture* texture;
-    SDL_Rect srcRect, dstRect;
-
     double angle = 0;
 
+    SDL_Rect srcRect, dstRect;
+    SDL_Texture* texture;
     SDL_Point anchorPoint;
+    SDL_RendererFlip flip = SDL_FLIP_NONE;
 
     void attr(const float scale, const float angle);
-    void loadFrame(const char* fileName);
-    void update();
     void render();
+    void loadFrame(const char* fileName);
+    void setPosition(const int x, const int y);
 
-    SDL_RendererFlip flip = SDL_FLIP_NONE;
+private:
 };
 
 #endif // SPRITE_H_

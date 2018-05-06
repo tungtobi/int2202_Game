@@ -60,8 +60,16 @@
 		<Unit filename="Game.h" />
 		<Unit filename="Layer.cpp" />
 		<Unit filename="Layer.h" />
+		<Unit filename="NotificationLayer.cpp" />
+		<Unit filename="NotificationLayer.h" />
+		<Unit filename="PauseLayer.cpp" />
+		<Unit filename="PauseLayer.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
+		<Unit filename="Resources.cpp" />
+		<Unit filename="Resources.h" />
+		<Unit filename="Rock.cpp" />
+		<Unit filename="Rock.h" />
 		<Unit filename="Sprite.cpp" />
 		<Unit filename="Sprite.h" />
 		<Unit filename="TextManager.cpp" />

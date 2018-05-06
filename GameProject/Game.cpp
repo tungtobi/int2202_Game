@@ -4,16 +4,19 @@
 #include "Fruit.h"
 #include <SDL2/SDL_ttf.h>
 #include "Layer.h"
+#include "NotificationLayer.h"
 
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Event Game::event;
 const int frameDelay = 1000 / FPS;
 Layer* layer;
+NotificationLayer* notifiLayer;
 
 Game::Game()
 {
     init(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
     layer = new Layer();
+    //notifiLayer = new NotificationLayer(10);
 }
 
 Game::~Game()
@@ -42,7 +45,7 @@ void Game::init(const char* title, int x, int y, const int width, const int heig
         renderer = SDL_CreateRenderer(window, -1, 0);
         if (renderer)
         {
-            SDL_SetRenderDrawColor(renderer, 40, 46, 58, 255);
+            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
             std::cout << "Renderer created!" << std::endl;
         }
 
@@ -69,7 +72,16 @@ void Game::update()
 
         listenEvents();
 
-        layer->update();
+        switch (gameState)
+        {
+        case PLAY_MODE_1:
+            layer->update();
+            break;
+        case SHOW_SCORE:
+            if (notifiLayer)
+                notifiLayer->update();
+            break;
+        }
 
         int frameTime = SDL_GetTicks() - frameStart;
 
@@ -91,6 +103,24 @@ void Game::listenEvents()
             break;
     }
 }
+
+void Game::showScoreNotice(const int _score)
+{
+    notifiLayer = new NotificationLayer(_score);
+    gameState = SHOW_SCORE;
+    //delete layer;
+    layer = nullptr;
+    std::cout << "show score" << std::endl;
+}
+
+void Game::playSinglyMode()
+{
+    layer = new Layer();
+    gameState = PLAY_MODE_1;
+    notifiLayer = nullptr;
+    std::cout << "play" << std::endl;
+}
+
 
 void Game::clean()
 {

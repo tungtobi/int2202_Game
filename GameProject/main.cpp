@@ -4,9 +4,11 @@
 #include "Fruit.h"
 #include "Layer.h"
 
+Game* game;
+
 int main(int argc, char* argv[])
 {
-    Game* game = new Game();
+    game = new Game();
 
     game->update();
 

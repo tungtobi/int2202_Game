@@ -14,11 +14,13 @@ public:
     ~Layer();
 
     std::vector <Fruit*> fruits;
-    Player* player;
+    Player player{BLACK_PIG};
 
-    Sprite* background;
+    Sprite background{"res/background.png"};
 
     unsigned int score = 0;
+    double time = 30;
+    bool isPause = false;
 
     void addFruit(Fruit* f);
     void removeFruit(Fruit* f);
@@ -27,13 +29,13 @@ public:
     void updateScore();
 
 private:
-    Text* scoreLabel;
-    Text* timeLabel;
-    Uint32 time = 120;
-    void updateTime();
+    Text scoreLabel{BOLD, 24};
+    Text timeLabel{BOLD, 30};
+
     Director director;
+
+    void updateTime();
     void renderSprite();
-    void initBackground();
 };
 
 #endif // LAYER_H_

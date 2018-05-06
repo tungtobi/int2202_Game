@@ -18,7 +18,7 @@ public:
     Sprite* sprite;
 
     void update();
-    void checkCaught(Player* player);
+    void checkCaught(Player& player);
 
 private:
     int type;

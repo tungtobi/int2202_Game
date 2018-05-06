@@ -1,6 +1,11 @@
 #include "Animation.h"
 #include "TextManager.h"
 
+Animation::Animation()
+{
+    keyFrame = 0;
+}
+
 Animation::Animation(const char* _fileName)
 {
     fileName = _fileName;
@@ -25,4 +30,11 @@ void Animation::runAnimation()
         std::string path = fileName + '_' + convertIntToStr(keyFrame) + ".png";
         sprite->loadFrame(path.c_str());
     }
+}
+
+Animation::~Animation()
+{
+    SDL_DestroyTexture(sprite->texture);
+    delete sprite;
+    std::cout << "Delete Animate" << std::endl;
 }

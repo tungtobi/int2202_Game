@@ -1,19 +1,14 @@
 #include "Layer.h"
 #include <algorithm>
 #include <cstdlib>
+#include "PauseLayer.h"
+
+extern Game* game;
 
 Layer::Layer()
 {
-    initBackground();
-    player = new Player();
-    scoreLabel = new Text("res/Maplestory Bold.ttf", 24);
-    timeLabel = new Text("res/Maplestory Bold.ttf", 30);
+    background.setPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
     updateScore();
-}
-
-void Layer::initBackground()
-{
-    background = new Sprite("res/background.png");
 }
 
 void Layer::addFruit(Fruit* f)
@@ -24,72 +19,94 @@ void Layer::addFruit(Fruit* f)
 void Layer::removeFruit(Fruit* f)
 {
     fruits.erase(std::remove(fruits.begin(), fruits.end(), f));
-    f->~Fruit();
-
     delete f;
 }
 
 void Layer::renderSprite()
 {
-    player->animation->sprite->render();
+    player.render();
+
     for (Fruit* f : fruits)
     {
-        if (f != NULL)
+        if (f)
+        {
             f->sprite->render();
+        }
     }
 }
 
 void Layer::update()
 {
     director.update();
+    player.update();
 
-    player->update();
-
-    for (Fruit* f : Layer::fruits)
+    if (!isPause)
     {
-        if (f != NULL)
+        for (Fruit* f : fruits)
         {
-            f->update();
-            f->checkCaught(player);
+            if (f)
+            {
+                f->update();
+                f->checkCaught(player);
+            }
         }
+
+        updateTime();
+        render();
+    }
+    else
+    {
+        static PauseLayer pauseLayer;
+        pauseLayer.render();
     }
 
-    updateTime();
-
-    render();
 }
 
 void Layer::updateScore()
 {
-    scoreLabel->para = convertIntToStr(score);
-    scoreLabel->initTexture();
+    scoreLabel.para = convertIntToStr(score);
+    scoreLabel.initTexture();
 }
 
 void Layer::updateTime()
 {
-    int timeLeft = time - SDL_GetTicks() / 1000;
-    timeLabel->para = convertIntToStr(timeLeft) + 's';
-    if (timeLeft <= 10)
+    time -= 0.015;
+    timeLabel.para = convertIntToStr(time) + 's';
+    if (time < 11)
     {
-        timeLabel->color = {255, 0, 0};
+        timeLabel.color = {255, 0, 0};
+        if (time <= 0 && game->gameState == PLAY_MODE_1)
+        {
+            game->showScoreNotice(score);
+        }
     }
-    timeLabel->initTexture();
+    else
+    {
+        timeLabel.color = {255, 255, 255};
+    }
+
+    timeLabel.initTexture();
 }
 
 void Layer::render()
 {
     SDL_RenderClear(Game::renderer);
-    background->render();
+
+    background.render();
+
     renderSprite();
-    scoreLabel->render(60, 40, LEFT_ALIGN);
-    timeLabel->render(SCREEN_WIDTH / 2, 40, CENTER_ALIGN);
+
+    scoreLabel.render(60, 40, LEFT_ALIGN);
+    timeLabel.render(SCREEN_WIDTH / 2, 40, CENTER_ALIGN);
 
     SDL_RenderPresent(Game::renderer);
 }
 
 Layer::~Layer()
 {
-
+    /*while (fruits.size() > 0)
+    {
+        removeFruit(fruits[0]);
+    }*/
+    fruits.clear();
 }
-
-

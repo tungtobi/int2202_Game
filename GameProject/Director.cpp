@@ -16,13 +16,19 @@ void Director::update()
         createFruit();
         dt = 0;
     }
-    else dt += 1;
+    else if (!layer->isPause)
+    {
+        dt++;
+    }
 }
 
 void Director::createFruit()
 {
-    Fruit* fruit = new Fruit();
-    layer->addFruit(fruit);
+    if (layer)
+    {
+        Fruit* fruit = new Fruit();
+        layer->addFruit(fruit);
+    }
 }
 
 Director::~Director()

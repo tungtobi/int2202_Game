@@ -7,6 +7,7 @@ class Animation
 {
 public:
     Animation(const char* _fileName);
+    Animation();
     ~Animation();
 
     Sprite* sprite;
@@ -17,11 +18,11 @@ public:
     int frameNumber = 3;
     std::string fileName;
     int w, h;
+    int keyFrame = 0;
 
 private:
     int speed = 10;
     int dt = 0;
-    int keyFrame = 0;
 };
 
 #endif // ANIMATION_H_

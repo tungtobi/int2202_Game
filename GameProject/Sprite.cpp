@@ -22,9 +22,10 @@ void Sprite::attr(const float scale, const float angle)
     dstRect.h = srcRect.h * scale;
 }
 
-void Sprite::update()
+void Sprite::setPosition(const int x, const int y)
 {
-
+    dstRect.x = x - dstRect.w / 2;
+    dstRect.y = y - dstRect.h / 2;
 }
 
 void Sprite::render()
@@ -43,5 +44,6 @@ void Sprite::render()
 
 Sprite::~Sprite()
 {
+    SDL_DestroyTexture(texture);
     delete texture;
 }

@@ -10,8 +10,10 @@ class PauseLayer
 public:
     PauseLayer();
     ~PauseLayer();
-    Text pauseLabel{BOLD, 150};
     void render();
+private:
+    Text pauseLabel{LIGHT, 12};
+    Sprite background{"res/loadingScene.png"};
 };
 
 #endif // PAUSELAYER_H_

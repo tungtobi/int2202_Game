@@ -54,12 +54,15 @@
 		<Unit filename="Animation.h" />
 		<Unit filename="Director.cpp" />
 		<Unit filename="Director.h" />
+		<Unit filename="Flower.cpp" />
+		<Unit filename="Flower.h" />
 		<Unit filename="Fruit.cpp" />
 		<Unit filename="Fruit.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="Layer.cpp" />
 		<Unit filename="Layer.h" />
+		<Unit filename="LoadingScene.h" />
 		<Unit filename="NotificationLayer.cpp" />
 		<Unit filename="NotificationLayer.h" />
 		<Unit filename="PauseLayer.cpp" />
@@ -68,8 +71,6 @@
 		<Unit filename="Player.h" />
 		<Unit filename="Resources.cpp" />
 		<Unit filename="Resources.h" />
-		<Unit filename="Rock.cpp" />
-		<Unit filename="Rock.h" />
 		<Unit filename="Sprite.cpp" />
 		<Unit filename="Sprite.h" />
 		<Unit filename="TextManager.cpp" />

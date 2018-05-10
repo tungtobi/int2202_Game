@@ -5,9 +5,6 @@
 #include <string>
 #include "Fruit.h"
 #include "Layer.h"
-#include "Explosion.h"
-
-#define MAX_TYPE 5
 
 extern Layer* layer;
 
@@ -19,24 +16,25 @@ int Fruit::generateRandom(int width)
 std::string Fruit::loadFileName(int type)
 {
     std::string path1 = "res/fruit",
-    path2 = "0",
-    path3 = ".png";
+                path2 = "0",
+                path3 = ".png";
     path2[0] = char(type + '0');
     return path1 + path2 + path3;
 }
 
 Fruit::Fruit()
 {
-    srand(time(0));
+    int maxType = 5 + ((layer->isMultyPlayer) ? 1 : 0);
 
-    type = generateRandom(MAX_TYPE);
+    srand(time(0));
+    type = generateRandom(maxType);
 
     std::string path = loadFileName(type);
 
-    sprite = new Sprite(path.c_str());
+    sprite.loadFrame(path.c_str());
 
-    w = sprite->dstRect.w;
-    h = sprite->dstRect.h;
+    w = sprite.dstRect.w;
+    h = sprite.dstRect.h;
 
     if (type != 4)
     {
@@ -47,8 +45,22 @@ Fruit::Fruit()
         speed = 2;
         acceleration = 5;
         if (layer)
-        x = layer->player.x;
+        {
+            x = layer->player.x;
+            if (layer->isMultyPlayer)
+            {
+                if (rand() % 2)
+                {
+                    x = layer->player.x;
+                }
+                else
+                {
+                    x = layer->player2.x;
+                }
+            }
+        }
     }
+
     y = -50;
 }
 
@@ -57,35 +69,38 @@ void Fruit::checkOutsideLayer()
     if (y + h / 2 > SCREEN_HEIGHT - 70)
     {
         if (layer)
-        layer->removeFruit(this);
+        {
+            layer->removeFruit(this);
+        }
     }
 }
 
 void Fruit::checkCaught(Player& player)
 {
     if (layer)
-    if (player.y - y >= 0 && player.y - y <= (h + player.h) / 2 && abs(player.x - x) <= player.w / 2)
-    {
-        layer->removeFruit(this);
-
-        switch (type)
+        if (player.y - y >= 0 && player.y - y <= (h + player.h) / 2 && abs(player.x - x) <= player.w / 2)
         {
-        case 1:
-        case 2:
-        case 3:
-            layer->score++;
-            break;
-        case 4:
-            layer->score /= 2;
-            player.getStuck();
-            break;
-        case 5:
-            layer->time += 5.0;
-            break;
-        }
+            layer->removeFruit(this);
 
-        layer->updateScore();
-    }
+            switch (type)
+            {
+            case 4:
+                player.score /= 2;
+                player.getStuck();
+                break;
+            case 5:
+                layer->time += 5.0;
+                break;
+            case 6:
+                layer->addFlower(player.id);
+                break;
+            default:
+                player.score++;
+                break;
+            }
+
+            layer->updateScore(player);
+        }
 }
 
 void Fruit::update()
@@ -95,18 +110,34 @@ void Fruit::update()
         dt += 0.2;
     }
 
-    sprite->angle = acceleration * dt * dt / 6;
+    sprite.angle = acceleration * dt * dt / 6;
 
     y = -50 + speed * dt + acceleration * dt * dt / 2;
 
-    sprite->setPosition(x, y);
+    sprite.setPosition(x, y);
 
     checkOutsideLayer();
+
+    if (layer->isMultyPlayer)
+    {
+        if (rand() % 2)
+        {
+            checkCaught(layer->player);
+            checkCaught(layer->player2);
+        }
+        else
+        {
+            checkCaught(layer->player2);
+            checkCaught(layer->player);
+        }
+    }
+    else
+    {
+        checkCaught(layer->player);
+    }
 }
 
 Fruit::~Fruit()
 {
-    delete sprite;
-    sprite = NULL;
     std::cout << "Delete fruit" << std::endl;
 }

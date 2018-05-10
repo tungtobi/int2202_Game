@@ -1,22 +1,17 @@
 #include "Animation.h"
 #include "TextManager.h"
 
-Animation::Animation()
-{
-    keyFrame = 0;
-}
-
-Animation::Animation(const char* _fileName)
+void Animation::loadImage(const char* _fileName)
 {
     fileName = _fileName;
     keyFrame = 0;
 
-    sprite = new Sprite((fileName + "_0.png").c_str());
+    initNormalSprite();
 }
 
 void Animation::initNormalSprite()
 {
-    sprite->loadFrame((fileName + "_0.png").c_str());
+    sprite.loadFrame((fileName + "_0.png").c_str());
 }
 
 void Animation::runAnimation()
@@ -28,13 +23,12 @@ void Animation::runAnimation()
         dt = 0;
         keyFrame = (keyFrame + 1) % frameNumber + 1;
         std::string path = fileName + '_' + convertIntToStr(keyFrame) + ".png";
-        sprite->loadFrame(path.c_str());
+        sprite.loadFrame(path.c_str());
     }
 }
 
 Animation::~Animation()
 {
-    SDL_DestroyTexture(sprite->texture);
-    delete sprite;
+    SDL_DestroyTexture(sprite.texture);
     std::cout << "Delete Animate" << std::endl;
 }

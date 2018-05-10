@@ -4,8 +4,8 @@
 #define LEFT_ALIGN 0
 #define CENTER_ALIGN 1
 #define RIGHT_ALIGN 2
-#define BOLD "res/Maplestory Bold.ttf"
-#define LIGHT "res/Maplestory Light.ttf"
+#define BOLD "res/font/Maplestory Bold.ttf"
+#define LIGHT "res/font/Maplestory Light.ttf"
 
 #include "Game.h"
 #include <SDL2/SDL_ttf.h>

@@ -6,10 +6,14 @@
 #define TITLE "Hungry Pig"
 #define FULLSCREEN false
 #define FPS 60
-#define PLAY_MODE_1 1
-#define PLAY_MODE_2 2
-#define MENU 0
-#define SHOW_SCORE 3
+
+enum SceneType
+{
+    MENU = 0,
+    PLAY_MODE_1,
+    PLAY_MODE_2,
+    SHOW_SCORE
+};
 
 #include <iostream>
 #include <SDL2/SDL.h>
@@ -26,11 +30,10 @@ public:
 
     static SDL_Renderer* renderer;
     static SDL_Event event;
-    //static bool isPause;
-    void showScoreNotice(const int _score);
-    void playSinglyMode();
+    void showScoreNotice(const int _score, const int _score2, const bool _isMultyPlayer);
+    void play(SceneType mode);
 
-    int gameState = PLAY_MODE_1;
+    SceneType scene = PLAY_MODE_2;
 
 private:
     int dt = 0;

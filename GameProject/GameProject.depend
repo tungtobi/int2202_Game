@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1525587776 source:d:\int2202_game\gameproject\animation.cpp
+1525792774 source:d:\int2202_game\gameproject\animation.cpp
 	"Animation.h"
 	"TextManager.h"
 
-1525587270 d:\int2202_game\gameproject\animation.h
+1525964617 d:\int2202_game\gameproject\animation.h
 	"Sprite.h"
 
-1525006630 d:\int2202_game\gameproject\sprite.h
+1525689827 d:\int2202_game\gameproject\sprite.h
 	"TextureManager.h"
 
 1524576578 d:\int2202_game\gameproject\texturemanager.h
 	"Game.h"
 
-1525602328 d:\int2202_game\gameproject\game.h
+1525964004 d:\int2202_game\gameproject\game.h
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL_image.h>
@@ -342,7 +342,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1525584006 d:\int2202_game\gameproject\textmanager.h
+1525770132 d:\int2202_game\gameproject\textmanager.h
 	"Game.h"
 	<SDL2/SDL_ttf.h>
 
@@ -351,7 +351,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1525602380 source:d:\int2202_game\gameproject\director.cpp
+1525962365 source:d:\int2202_game\gameproject\director.cpp
 	"Director.h"
 	"Fruit.h"
 	"Layer.h"
@@ -359,32 +359,34 @@
 1524646741 d:\int2202_game\gameproject\director.h
 	"Game.h"
 
-1525588735 d:\int2202_game\gameproject\fruit.h
+1525962349 d:\int2202_game\gameproject\fruit.h
 	"Game.h"
 	"Player.h"
 
-1525587711 d:\int2202_game\gameproject\player.h
+1525962716 d:\int2202_game\gameproject\player.h
 	"Game.h"
 	"Animation.h"
 	"Resources.h"
 
-1525582100 d:\int2202_game\gameproject\resources.h
+1525962697 d:\int2202_game\gameproject\resources.h
 
-1525603838 d:\int2202_game\gameproject\layer.h
+1525971755 d:\int2202_game\gameproject\layer.h
 	"Player.h"
 	"Fruit.h"
 	"TextManager.h"
 	<vector>
 	"Director.h"
+	"Flower.h"
 
-1525602191 source:d:\int2202_game\gameproject\game.cpp
+1525971226 source:d:\int2202_game\gameproject\game.cpp
+	<SDL2/SDL_ttf.h>
 	"Game.h"
 	"Player.h"
 	"Sprite.h"
 	"Fruit.h"
-	<SDL2/SDL_ttf.h>
 	"Layer.h"
 	"NotificationLayer.h"
+	"LoadingScene.h"
 
 1525590970 source:d:\int2202_game\gameproject\main.cpp
 	"Game.h"
@@ -393,19 +395,20 @@
 	"Fruit.h"
 	"Layer.h"
 
-1525586293 source:d:\int2202_game\gameproject\pauselayer.cpp
+1525972994 source:d:\int2202_game\gameproject\pauselayer.cpp
 	"PauseLayer.h"
 
-1525586312 d:\int2202_game\gameproject\pauselayer.h
+1525972948 d:\int2202_game\gameproject\pauselayer.h
 	"Game.h"
 	"TextManager.h"
 	"Sprite.h"
 
-1525602546 source:d:\int2202_game\gameproject\player.cpp
+1525968183 source:d:\int2202_game\gameproject\player.cpp
 	"Player.h"
 	"Layer.h"
+	<cmath>
 
-1525582100 source:d:\int2202_game\gameproject\resources.cpp
+1525617141 source:d:\int2202_game\gameproject\resources.cpp
 	"Resources.h"
 	<iostream>
 
@@ -418,13 +421,14 @@
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
 
-1525603810 source:d:\int2202_game\gameproject\layer.cpp
+1525962381 source:d:\int2202_game\gameproject\layer.cpp
 	"Layer.h"
 	<algorithm>
 	<cstdlib>
 	"PauseLayer.h"
+	"Game.h"
 
-1525602443 source:d:\int2202_game\gameproject\fruit.cpp
+1525971756 source:d:\int2202_game\gameproject\fruit.cpp
 	<cstdlib>
 	<time.h>
 	<math.h>
@@ -432,27 +436,41 @@
 	<string>
 	"Fruit.h"
 	"Layer.h"
-	"Explosion.h"
 
 1525073700 d:\int2202_game\gameproject\explosion.h
 	"Animation.h"
 
-1525542844 d:\int2202_game\gameproject\rock.h
+1525611420 d:\int2202_game\gameproject\rock.h
 	"Game.h"
 	"Sprite.h"
 
-1525585027 source:d:\int2202_game\gameproject\rock.cpp
+1525611729 source:d:\int2202_game\gameproject\rock.cpp
+	<cmath>
 	"Rock.h"
 	"Resources.h"
-	<cmath>
 	"Layer.h"
 
-1525601041 d:\int2202_game\gameproject\notificationlayer.h
+1525970916 d:\int2202_game\gameproject\notificationlayer.h
 	"Game.h"
 	"TextManager.h"
 	"Sprite.h"
 	<vector>
 
-1525602212 source:d:\int2202_game\gameproject\notificationlayer.cpp
+1525970899 source:d:\int2202_game\gameproject\notificationlayer.cpp
 	"NotificationLayer.h"
+	<cmath>
+
+1525962560 d:\int2202_game\gameproject\flower.h
+	"Game.h"
+	"Animation.h"
+	"Player.h"
+
+1525965131 source:d:\int2202_game\gameproject\flower.cpp
+	"Flower.h"
+	"Layer.h"
+
+1525972634 d:\int2202_game\gameproject\loadingscene.h
+	"Game.h"
+	"Sprite.h"
+	"TextManager.h"
 

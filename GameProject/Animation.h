@@ -6,18 +6,16 @@
 class Animation
 {
 public:
-    Animation(const char* _fileName);
-    Animation();
+    void loadImage(const char* _fileName);
     ~Animation();
 
-    Sprite* sprite;
+    Sprite sprite;
 
     void runAnimation();
     void initNormalSprite();
 
     int frameNumber = 3;
     std::string fileName;
-    int w, h;
     int keyFrame = 0;
 
 private:

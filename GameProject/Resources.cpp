@@ -1,7 +1,7 @@
 #include "Resources.h"
 #include <iostream>
 
-Resources::Resources(int type)
+void Resources::setType(int type)
 {
     switch (type)
     {

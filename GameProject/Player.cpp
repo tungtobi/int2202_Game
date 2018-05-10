@@ -1,81 +1,73 @@
 #include "Player.h"
 #include "Layer.h"
+#include <cmath>
 
 extern Layer* layer;
 
-Player::Player(const int type)
+Player::Player(PlayerType type)
 {
     id = type;
+    res.setType(type);
 
-    animation = new Animation(res.normal);
+    animation.loadImage(res.normal);
 
-    w = animation->sprite->dstRect.w;
-    h = animation->sprite->dstRect.h;
+    w = animation.sprite.dstRect.w;
+    h = animation.sprite.dstRect.h;
 
     x = SCREEN_WIDTH / 2;
     y = SCREEN_HEIGHT - 105;
 }
 
-void Player::listenEventFromKeyboard()
+void Player::listenEventFromKeyboard(const SDL_Keycode moveRight, const SDL_Keycode moveLeft)
 {
+    SDL_Keycode key = Game::event.key.keysym.sym;
+
     if (Game::event.type == SDL_KEYDOWN)
     {
-        switch (Game::event.key.keysym.sym)
+        if (key == moveLeft)
         {
-        case SDLK_LEFT:
             if (!isOutsideLayer() && !isStuck() && !layer->isPause)
             {
-                animation->sprite->flip = SDL_FLIP_HORIZONTAL;
+                isMoveRight = false;
+                animation.sprite.flip = SDL_FLIP_HORIZONTAL;
                 speed = -5;
             }
-            break;
-        case SDLK_RIGHT:
+        }
+        else if (key == moveRight)
+        {
             if (!isOutsideLayer() && !isStuck() && !layer->isPause)
             {
-                animation->sprite->flip = SDL_FLIP_NONE;
+                isMoveRight = true;
+                animation.sprite.flip = SDL_FLIP_NONE;
                 speed = 5;
             }
-            break;
-        case SDLK_p:
-            layer->isPause = !layer->isPause;
+        }
+        else if (key == SDLK_p)
+        {
+            if (id == BLACK_PIG)
+            {
+                layer->isPause = !layer->isPause;
+            }
             speed = 0;
-            break;
-        case SDLK_UP:
-
-            break;
         }
 
         if (speed != 0)
         {
-            animation->runAnimation();
+            animation.runAnimation();
         }
     }
 
     if (Game::event.type == SDL_KEYUP)
     {
-        switch (Game::event.key.keysym.sym)
+        if (key == moveLeft || key == moveRight)
         {
-        case SDLK_LEFT:
-        case SDLK_RIGHT:
             speed = 0;
             if (!isStuck())
             {
-                animation->initNormalSprite();
+                animation.initNormalSprite();
             }
-            break;
         }
     }
-}
-
-void Player::removeRock()
-{
-    /*
-    if (rock)
-    {
-        delete rock;
-        rock = NULL;
-    }
-    */
 }
 
 bool Player::isOutsideLayer()
@@ -94,33 +86,32 @@ bool Player::isOutsideLayer()
 
 void Player::update()
 {
-    x += speed;
-    animation->sprite->setPosition(x, y);
-    listenEventFromKeyboard();
-
-    /*
-    if (rock)
+    if (!isOutsideLayer())
     {
-        rock->update();
+        x += speed;
     }
-    */
+
+    animation.sprite.setPosition(x, y);
+
+    if (id == BLACK_PIG)
+    {
+        listenEventFromKeyboard(SDLK_RIGHT, SDLK_LEFT);
+    }
+    else
+    {
+        listenEventFromKeyboard(SDLK_LALT, SDLK_LSHIFT);
+    }
 }
 
 void Player::render()
 {
-    animation->sprite->render();
-    /*
-    if (rock)
-    {
-        rock->sprite->render();
-    }
-    */
+    animation.sprite.render();
 }
 
 void Player::getStuck()
 {
     speed = 0;
-    animation->sprite->loadFrame(res.hurted);
+    animation.sprite.loadFrame(res.hurted);
     timeStuck = SDL_GetTicks();
 }
 
@@ -141,9 +132,5 @@ bool Player::isStuck()
 
 Player::~Player()
 {
-    delete animation;
-
-    //if (rock)
-        //delete rock;
     std::cout << "Delete Player" << std::endl;
 }

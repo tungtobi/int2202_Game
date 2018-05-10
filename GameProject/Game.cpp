@@ -1,10 +1,11 @@
+#include <SDL2/SDL_ttf.h>
 #include "Game.h"
 #include "Player.h"
 #include "Sprite.h"
 #include "Fruit.h"
-#include <SDL2/SDL_ttf.h>
 #include "Layer.h"
 #include "NotificationLayer.h"
+#include "LoadingScene.h"
 
 SDL_Renderer* Game::renderer = nullptr;
 SDL_Event Game::event;
@@ -15,13 +16,7 @@ NotificationLayer* notifiLayer;
 Game::Game()
 {
     init(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, FULLSCREEN);
-    layer = new Layer();
-    //notifiLayer = new NotificationLayer(10);
-}
-
-Game::~Game()
-{
-
+    play(scene);
 }
 
 void Game::init(const char* title, int x, int y, const int width, const int height, const bool fullscreen)
@@ -57,7 +52,6 @@ void Game::init(const char* title, int x, int y, const int width, const int heig
     }
 
     TTF_Init();
-
     if (TTF_Init() < 0)
     {
         std::cout << "TTF Error!" << std::endl;
@@ -72,19 +66,20 @@ void Game::update()
 
         listenEvents();
 
-        switch (gameState)
+        switch (scene)
         {
         case PLAY_MODE_1:
+        case PLAY_MODE_2:
             layer->update();
             break;
         case SHOW_SCORE:
-            if (notifiLayer)
-                notifiLayer->update();
+            notifiLayer->update();
+            break;
+        default:
             break;
         }
 
         int frameTime = SDL_GetTicks() - frameStart;
-
         if (frameDelay > frameTime)
         {
             SDL_Delay(frameDelay - frameTime);
@@ -104,19 +99,22 @@ void Game::listenEvents()
     }
 }
 
-void Game::showScoreNotice(const int _score)
+void Game::showScoreNotice(const int _score, const int _score2, const bool _isMultyPlayer)
 {
-    notifiLayer = new NotificationLayer(_score);
-    gameState = SHOW_SCORE;
-    //delete layer;
+    runSplashScene(2000);
+
+    notifiLayer = new NotificationLayer(_score, _score2, _isMultyPlayer);
+    scene = SHOW_SCORE;
     layer = nullptr;
     std::cout << "show score" << std::endl;
 }
 
-void Game::playSinglyMode()
+void Game::play(SceneType mode)
 {
-    layer = new Layer();
-    gameState = PLAY_MODE_1;
+    runSplashScene(5000);
+
+    layer = new Layer(mode - 1);
+    scene = PLAY_MODE_1;
     notifiLayer = nullptr;
     std::cout << "play" << std::endl;
 }
@@ -130,4 +128,10 @@ void Game::clean()
     IMG_Quit();
     SDL_Quit();
     std::cout << "Quit SDL" << std::endl;
+}
+
+
+Game::~Game()
+{
+
 }

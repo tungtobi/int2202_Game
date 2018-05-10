@@ -4,33 +4,32 @@
 #include "Game.h"
 #include "Animation.h"
 #include "Resources.h"
-//#include "Rock.h"
 
 class Player
 {
 public:
-    Player(const int type);
+    Player(PlayerType type);
     ~Player();
 
     int id, x, y, w, h;
     float scale = 1;
+    unsigned int score = 0;
 
-    Animation* animation;
+    Animation animation;
 
     void update();
     void render();
     void getStuck();
     void removeRock();
+    bool isStuck();
 private:
     int speed = 0;
-    Resources res{BLACK_PIG};
+    Resources res;
     Uint32 timeStuck = 0;
-    bool isMoveLeft;
+    bool isMoveRight = true;
 
-    bool isStuck();
-    void listenEventFromKeyboard();
+    void listenEventFromKeyboard(const SDL_Keycode moveRight, const SDL_Keycode moveLeft);
     bool isOutsideLayer();
-    //Rock* rock;
 };
 
 #endif // PLAYER_H_

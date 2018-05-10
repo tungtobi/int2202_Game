@@ -6,7 +6,7 @@
 class Sprite
 {
 public:
-    Sprite(const char* fileName);
+    Sprite(const char* fileName = "");
     ~Sprite();
 
     double angle = 0;

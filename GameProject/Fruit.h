@@ -15,7 +15,7 @@ public:
 
     int acceleration = 3, speed = 1;
 
-    Sprite* sprite;
+    Sprite sprite;
 
     void update();
     void checkCaught(Player& player);

@@ -13,6 +13,7 @@ void Director::update()
 {
     if (dt >= 50)
     {
+        Game::mixManager.playSoundEffect(DROP_SOUND);
         createFruit();
         dt = 0;
     }

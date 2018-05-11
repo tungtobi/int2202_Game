@@ -72,6 +72,7 @@ void Fruit::checkOutsideLayer()
         {
             layer->removeFruit(this);
         }
+        Game::mixManager.playSoundEffect(BROKEN_SOUND);
     }
 }
 
@@ -90,12 +91,14 @@ void Fruit::checkCaught(Player& player)
                 break;
             case 5:
                 layer->time += 5.0;
+                Game::mixManager.playSoundEffect(EATING_SOUND);
                 break;
             case 6:
                 layer->addFlower(player.id);
                 break;
             default:
                 player.score++;
+                Game::mixManager.playSoundEffect(EATING_SOUND);
                 break;
             }
 

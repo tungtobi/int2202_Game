@@ -13,7 +13,7 @@
 class Text
 {
 public:
-    Text(const char* path, const int _size);
+    Text(const char* path = BOLD, const int _size = 18);
     ~Text();
 
     std::string para;

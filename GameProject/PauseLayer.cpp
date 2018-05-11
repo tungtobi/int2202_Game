@@ -3,7 +3,7 @@
 PauseLayer::PauseLayer()
 {
     background.setPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-    pauseLabel.para = "Pause! Press 'P' to continue.";
+    pauseLabel.para = "Continue \n";
     pauseLabel.initTexture();
 }
 

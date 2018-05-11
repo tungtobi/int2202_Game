@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Layer.h"
+#include "Mixer.h"
 #include <cmath>
 
 extern Layer* layer;
@@ -110,6 +111,7 @@ void Player::render()
 
 void Player::getStuck()
 {
+    Game::mixManager.playSoundEffect(HURTED_SOUND);
     speed = 0;
     animation.sprite.loadFrame(res.hurted);
     timeStuck = SDL_GetTicks();

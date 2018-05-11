@@ -143,9 +143,15 @@ void Layer::updateScore(const Player& _player)
 void Layer::updateTime()
 {
     time -= 0.015;
+    static bool isWarning;
     timeLabel.para = convertIntToStr(time) + 's';
     if (time < 11)
     {
+        if (!isWarning)
+        {
+            Game::mixManager.playSoundEffect(WARNING_SOUND);
+            isWarning = true;
+        }
         timeLabel.color = {255, 0, 0};
         if (time <= 0)
         {
@@ -154,6 +160,7 @@ void Layer::updateTime()
     }
     else
     {
+        isWarning = false;
         timeLabel.color = {255, 255, 255};
     }
 

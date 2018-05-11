@@ -13,10 +13,10 @@ public:
     void update();
 
 private:
-    int score, bestScore = 0, score2;
+    int score, score2;
     Text line1{LIGHT, 16},
     line2{LIGHT, 16},
-    line3{LIGHT, 16},
+    line3{LIGHT, 12},
     scoreLabel{BOLD, 100},
     bestScoreLabel{BOLD, 100};
     Sprite background{"res/backgroundNotice.png"};

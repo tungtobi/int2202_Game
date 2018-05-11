@@ -12,10 +12,11 @@
 1524576578 d:\int2202_game\gameproject\texturemanager.h
 	"Game.h"
 
-1525964004 d:\int2202_game\gameproject\game.h
+1526052737 d:\int2202_game\gameproject\game.h
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL_image.h>
+	"Mixer.h"
 
 1476935894 d:\int2202_game\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -342,7 +343,21 @@
 	"begin_code.h"
 	"close_code.h"
 
-1525770132 d:\int2202_game\gameproject\textmanager.h
+1526057813 d:\int2202_game\gameproject\mixer.h
+	<iostream>
+	<vector>
+	<SDL2/SDL_mixer.h>
+
+1508772768 d:\int2202_game\i686-w64-mingw32_mixer\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526055056 d:\int2202_game\gameproject\textmanager.h
 	"Game.h"
 	<SDL2/SDL_ttf.h>
 
@@ -351,7 +366,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1525962365 source:d:\int2202_game\gameproject\director.cpp
+1526036059 source:d:\int2202_game\gameproject\director.cpp
 	"Director.h"
 	"Fruit.h"
 	"Layer.h"
@@ -378,7 +393,25 @@
 	"Director.h"
 	"Flower.h"
 
-1525971226 source:d:\int2202_game\gameproject\game.cpp
+1525962560 d:\int2202_game\gameproject\flower.h
+	"Game.h"
+	"Animation.h"
+	"Player.h"
+
+1525965131 source:d:\int2202_game\gameproject\flower.cpp
+	"Flower.h"
+	"Layer.h"
+
+1526036039 source:d:\int2202_game\gameproject\fruit.cpp
+	<cstdlib>
+	<time.h>
+	<math.h>
+	<random>
+	<string>
+	"Fruit.h"
+	"Layer.h"
+
+1526056692 source:d:\int2202_game\gameproject\game.cpp
 	<SDL2/SDL_ttf.h>
 	"Game.h"
 	"Player.h"
@@ -387,6 +420,36 @@
 	"Layer.h"
 	"NotificationLayer.h"
 	"LoadingScene.h"
+	"Data.h"
+	"Menu.h"
+
+1526044741 d:\int2202_game\gameproject\notificationlayer.h
+	"Game.h"
+	"TextManager.h"
+	"Sprite.h"
+	<vector>
+
+1525997399 d:\int2202_game\gameproject\loadingscene.h
+	"Game.h"
+	"Sprite.h"
+	"TextManager.h"
+
+1526045394 d:\int2202_game\gameproject\data.h
+	<iostream>
+	<fstream>
+	<ios>
+
+1526056247 source:d:\int2202_game\gameproject\layer.cpp
+	"Layer.h"
+	<algorithm>
+	<cstdlib>
+	"PauseLayer.h"
+	"Game.h"
+
+1525972948 d:\int2202_game\gameproject\pauselayer.h
+	"Game.h"
+	"TextManager.h"
+	"Sprite.h"
 
 1525590970 source:d:\int2202_game\gameproject\main.cpp
 	"Game.h"
@@ -395,17 +458,16 @@
 	"Fruit.h"
 	"Layer.h"
 
-1525972994 source:d:\int2202_game\gameproject\pauselayer.cpp
+1526057770 source:d:\int2202_game\gameproject\mixer.cpp
+	"Mixer.h"
+
+1526049967 source:d:\int2202_game\gameproject\pauselayer.cpp
 	"PauseLayer.h"
 
-1525972948 d:\int2202_game\gameproject\pauselayer.h
-	"Game.h"
-	"TextManager.h"
-	"Sprite.h"
-
-1525968183 source:d:\int2202_game\gameproject\player.cpp
+1526033685 source:d:\int2202_game\gameproject\player.cpp
 	"Player.h"
 	"Layer.h"
+	"Mixer.h"
 	<cmath>
 
 1525617141 source:d:\int2202_game\gameproject\resources.cpp
@@ -421,56 +483,17 @@
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
 
-1525962381 source:d:\int2202_game\gameproject\layer.cpp
-	"Layer.h"
-	<algorithm>
-	<cstdlib>
-	"PauseLayer.h"
-	"Game.h"
-
-1525971756 source:d:\int2202_game\gameproject\fruit.cpp
-	<cstdlib>
-	<time.h>
-	<math.h>
-	<random>
-	<string>
-	"Fruit.h"
-	"Layer.h"
-
-1525073700 d:\int2202_game\gameproject\explosion.h
-	"Animation.h"
-
-1525611420 d:\int2202_game\gameproject\rock.h
-	"Game.h"
-	"Sprite.h"
-
-1525611729 source:d:\int2202_game\gameproject\rock.cpp
-	<cmath>
-	"Rock.h"
-	"Resources.h"
-	"Layer.h"
-
-1525970916 d:\int2202_game\gameproject\notificationlayer.h
-	"Game.h"
-	"TextManager.h"
-	"Sprite.h"
-	<vector>
-
-1525970899 source:d:\int2202_game\gameproject\notificationlayer.cpp
+1526052839 source:d:\int2202_game\gameproject\notificationlayer.cpp
 	"NotificationLayer.h"
 	<cmath>
 
-1525962560 d:\int2202_game\gameproject\flower.h
-	"Game.h"
-	"Animation.h"
-	"Player.h"
-
-1525965131 source:d:\int2202_game\gameproject\flower.cpp
-	"Flower.h"
-	"Layer.h"
-
-1525972634 d:\int2202_game\gameproject\loadingscene.h
-	"Game.h"
-	"Sprite.h"
+1526059308 d:\int2202_game\gameproject\menu.h
+	<vector>
 	"TextManager.h"
+	"Sprite.h"
+
+1526060150 source:d:\int2202_game\gameproject\menu.cpp
+	"Menu.h"
+	"Game.h"
+	"Mixer.h"
 

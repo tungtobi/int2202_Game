@@ -5,6 +5,8 @@ extern Game* game;
 
 NotificationLayer::NotificationLayer(const int _score, const int _score2, const bool _isMultyPlayer)
 {
+    Game::mixManager.playSoundEffect(GAMEOVER_SOUND);
+
     score = _score;
     score2 = _score2;
     isMultyPlayer = _isMultyPlayer;
@@ -16,7 +18,7 @@ NotificationLayer::NotificationLayer(const int _score, const int _score2, const 
 
 void NotificationLayer::loadBestScore()
 {
-    bestScore = std::max(bestScore, std::max(score, score2));
+    game->bestScore = std::max(game->bestScore, std::max(score, score2));
 }
 
 void NotificationLayer::initTextLabel()
@@ -46,10 +48,10 @@ void NotificationLayer::initTextLabel()
     line2.para = "Your best";
     line2.initTexture();
 
-    line3.para = "Press 'Space' to continue!";
+    line3.para = "Menu \n";
     line3.initTexture();
 
-    bestScoreLabel.para = convertIntToStr(bestScore);
+    bestScoreLabel.para = convertIntToStr(game->bestScore);
     bestScoreLabel.initTexture();
 }
 
@@ -65,7 +67,7 @@ void NotificationLayer::render()
     line2.render(SCREEN_WIDTH / 2 + 120, SCREEN_HEIGHT / 2 + 100, CENTER_ALIGN);
     bestScoreLabel.render(SCREEN_WIDTH / 2 + 120, SCREEN_HEIGHT / 2 + 160, CENTER_ALIGN);
 
-    line3.render(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 20, CENTER_ALIGN);
+    line3.render(SCREEN_WIDTH - 8, SCREEN_HEIGHT - 12, RIGHT_ALIGN);
 
     SDL_RenderPresent(Game::renderer);
 }
@@ -75,9 +77,8 @@ void NotificationLayer::listenEvent()
     if (Game::event.type == SDL_KEYDOWN)
     {
         if (Game::event.key.keysym.sym == SDLK_SPACE)
-            //if (game->scene != PLAY_MODE_1)
         {
-            game->play(PLAY_MODE_1);
+            game->showMenu();
         }
     }
 }

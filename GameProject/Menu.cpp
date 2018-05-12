@@ -28,7 +28,7 @@ void Menu::initLabels()
         menuLabel[i].initTexture();
     }
 
-    gameInfo.para = "Hungry Piggy v1.0";
+    gameInfo.para = "Hungry Piggy v1.0.1";
     gameInfo.initTexture();
 }
 

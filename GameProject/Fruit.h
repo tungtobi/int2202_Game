@@ -26,6 +26,7 @@ private:
     void checkOutsideLayer();
     int generateRandom(int width);
     std::string loadFileName(int type);
+    double getDistance(const Player& player);
 };
 
 #endif // FRUIT_H_

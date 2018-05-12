@@ -374,7 +374,7 @@
 1524646741 d:\int2202_game\gameproject\director.h
 	"Game.h"
 
-1525962349 d:\int2202_game\gameproject\fruit.h
+1526098731 d:\int2202_game\gameproject\fruit.h
 	"Game.h"
 	"Player.h"
 
@@ -400,15 +400,6 @@
 
 1525965131 source:d:\int2202_game\gameproject\flower.cpp
 	"Flower.h"
-	"Layer.h"
-
-1526036039 source:d:\int2202_game\gameproject\fruit.cpp
-	<cstdlib>
-	<time.h>
-	<math.h>
-	<random>
-	<string>
-	"Fruit.h"
 	"Layer.h"
 
 1526056692 source:d:\int2202_game\gameproject\game.cpp
@@ -439,7 +430,12 @@
 	<fstream>
 	<ios>
 
-1526056247 source:d:\int2202_game\gameproject\layer.cpp
+1526059308 d:\int2202_game\gameproject\menu.h
+	<vector>
+	"TextManager.h"
+	"Sprite.h"
+
+1526096681 source:d:\int2202_game\gameproject\layer.cpp
 	"Layer.h"
 	<algorithm>
 	<cstdlib>
@@ -458,13 +454,22 @@
 	"Fruit.h"
 	"Layer.h"
 
+1526060150 source:d:\int2202_game\gameproject\menu.cpp
+	"Menu.h"
+	"Game.h"
+	"Mixer.h"
+
 1526057770 source:d:\int2202_game\gameproject\mixer.cpp
 	"Mixer.h"
+
+1526052839 source:d:\int2202_game\gameproject\notificationlayer.cpp
+	"NotificationLayer.h"
+	<cmath>
 
 1526049967 source:d:\int2202_game\gameproject\pauselayer.cpp
 	"PauseLayer.h"
 
-1526033685 source:d:\int2202_game\gameproject\player.cpp
+1526096939 source:d:\int2202_game\gameproject\player.cpp
 	"Player.h"
 	"Layer.h"
 	"Mixer.h"
@@ -482,18 +487,4 @@
 
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
-
-1526052839 source:d:\int2202_game\gameproject\notificationlayer.cpp
-	"NotificationLayer.h"
-	<cmath>
-
-1526059308 d:\int2202_game\gameproject\menu.h
-	<vector>
-	"TextManager.h"
-	"Sprite.h"
-
-1526060150 source:d:\int2202_game\gameproject\menu.cpp
-	"Menu.h"
-	"Game.h"
-	"Mixer.h"
 

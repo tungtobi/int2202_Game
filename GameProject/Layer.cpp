@@ -34,6 +34,7 @@ void Layer::addFruit(Fruit* f)
 
 void Layer::removeFruit(Fruit* f)
 {
+    //if (std::remove(fruits.begin(), fruits.end(), f))
     fruits.erase(std::remove(fruits.begin(), fruits.end(), f));
     delete f;
 }

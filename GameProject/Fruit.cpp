@@ -86,6 +86,7 @@ void Fruit::checkCaught(Player& player)
             switch (type)
             {
             case 4:
+                Game::mixManager.playSoundEffect(HURTED_SOUND);
                 player.score /= 2;
                 player.getStuck();
                 break;
@@ -94,6 +95,7 @@ void Fruit::checkCaught(Player& player)
                 Game::mixManager.playSoundEffect(EATING_SOUND);
                 break;
             case 6:
+                Game::mixManager.playSoundEffect(HURTED_SOUND);
                 layer->addFlower(player.id);
                 break;
             default:
@@ -104,6 +106,14 @@ void Fruit::checkCaught(Player& player)
 
             layer->updateScore(player);
         }
+}
+
+double Fruit::getDistance(const Player& player)
+{
+    int deltaX = abs(player.x - x);
+    int deltaY = abs(player.y - y);
+    double distance = sqrt(deltaX * deltaX + deltaY * deltaY);
+    return distance;
 }
 
 void Fruit::update()
@@ -123,15 +133,13 @@ void Fruit::update()
 
     if (layer->isMultyPlayer)
     {
-        if (rand() % 2)
+        if (getDistance(layer->player) < getDistance(layer->player2))
         {
             checkCaught(layer->player);
-            checkCaught(layer->player2);
         }
         else
         {
             checkCaught(layer->player2);
-            checkCaught(layer->player);
         }
     }
     else

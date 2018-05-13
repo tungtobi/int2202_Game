@@ -430,7 +430,7 @@
 	<fstream>
 	<ios>
 
-1526059308 d:\int2202_game\gameproject\menu.h
+1526099732 d:\int2202_game\gameproject\menu.h
 	<vector>
 	"TextManager.h"
 	"Sprite.h"
@@ -454,7 +454,7 @@
 	"Fruit.h"
 	"Layer.h"
 
-1526060150 source:d:\int2202_game\gameproject\menu.cpp
+1526121399 source:d:\int2202_game\gameproject\menu.cpp
 	"Menu.h"
 	"Game.h"
 	"Mixer.h"
@@ -487,4 +487,13 @@
 
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
+
+1526098810 source:d:\int2202_game\gameproject\fruit.cpp
+	<cstdlib>
+	<time.h>
+	<math.h>
+	<random>
+	<string>
+	"Fruit.h"
+	"Layer.h"
 

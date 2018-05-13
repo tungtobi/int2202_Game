@@ -1,8 +1,4 @@
 #include "Game.h"
-#include "Sprite.h"
-#include "Player.h"
-#include "Fruit.h"
-#include "Layer.h"
 
 Game* game;
 

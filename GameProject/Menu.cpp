@@ -35,7 +35,7 @@ void Menu::initLabels()
 void Menu::updateSoundLabel(bool _isMuted)
 {
     std::string title = "Audio: ",
-    status = _isMuted ? "OFF" : "ON";
+                status = _isMuted ? "OFF" : "ON";
     menuText[SOUND] = title + status;
     select(QUIT, SOUND);
 }
@@ -46,11 +46,31 @@ void Menu::select(MenuItem prevSelect, MenuItem selected)
     menuLabel[prevSelect].color = {255, 255, 255};
     menuLabel[prevSelect].initTexture();
 
-    menuLabel[selected].para = "\n " + menuText[selected] + " \n";
+    menuLabel[selected].para = menuText[selected] + " \n";
     menuLabel[selected].color = {0, 0, 127};
     menuLabel[selected].initTexture();
 
     selection = selected;
+}
+
+void Menu::enterSelection()
+{
+    switch (selection)
+    {
+    case SINGLY_PLAY:
+    case MULTY_PLAY:
+        game->play(SceneType(selection + 1));
+        break;
+    case SOUND:
+        game->mixManager.muted();
+        updateSoundLabel(game->mixManager.isMuted);
+        break;
+    case QUIT:
+        game->clean();
+        break;
+    default:
+        break;
+    }
 }
 
 void Menu::listenEvents()
@@ -72,22 +92,7 @@ void Menu::listenEvents()
             break;
         case SDLK_SPACE:
             game->mixManager.playSoundEffect(EATING_SOUND);
-            switch (selection)
-            {
-            case SINGLY_PLAY:
-            case MULTY_PLAY:
-                game->play(SceneType(selection + 1));
-                break;
-            case SOUND:
-                game->mixManager.muted();
-                updateSoundLabel(game->mixManager.isMuted);
-                break;
-            case QUIT:
-                game->clean();
-                break;
-            default:
-                break;
-            }
+            enterSelection();
             break;
         }
         SDL_Delay(300);

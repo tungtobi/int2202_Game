@@ -25,6 +25,7 @@ private:
     void initLabels();
     void listenEvents();
     void select(MenuItem prevSelect, MenuItem selected);
+    void enterSelection();
     void updateSoundLabel(bool _isMuted);
     void render();
 public:

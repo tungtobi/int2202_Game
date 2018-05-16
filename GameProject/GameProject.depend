@@ -357,7 +357,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1526055056 d:\int2202_game\gameproject\textmanager.h
+1526484072 d:\int2202_game\gameproject\textmanager.h
 	"Game.h"
 	<SDL2/SDL_ttf.h>
 
@@ -402,6 +402,15 @@
 	"Flower.h"
 	"Layer.h"
 
+1526098810 source:d:\int2202_game\gameproject\fruit.cpp
+	<cstdlib>
+	<time.h>
+	<math.h>
+	<random>
+	<string>
+	"Fruit.h"
+	"Layer.h"
+
 1526056692 source:d:\int2202_game\gameproject\game.cpp
 	<SDL2/SDL_ttf.h>
 	"Game.h"
@@ -414,7 +423,7 @@
 	"Data.h"
 	"Menu.h"
 
-1526044741 d:\int2202_game\gameproject\notificationlayer.h
+1526440068 d:\int2202_game\gameproject\notificationlayer.h
 	"Game.h"
 	"TextManager.h"
 	"Sprite.h"
@@ -425,12 +434,12 @@
 	"Sprite.h"
 	"TextManager.h"
 
-1526045394 d:\int2202_game\gameproject\data.h
+1526484221 d:\int2202_game\gameproject\data.h
 	<iostream>
 	<fstream>
 	<ios>
 
-1526099732 d:\int2202_game\gameproject\menu.h
+1526439589 d:\int2202_game\gameproject\menu.h
 	<vector>
 	"TextManager.h"
 	"Sprite.h"
@@ -447,12 +456,8 @@
 	"TextManager.h"
 	"Sprite.h"
 
-1525590970 source:d:\int2202_game\gameproject\main.cpp
+1526202341 source:d:\int2202_game\gameproject\main.cpp
 	"Game.h"
-	"Sprite.h"
-	"Player.h"
-	"Fruit.h"
-	"Layer.h"
 
 1526121399 source:d:\int2202_game\gameproject\menu.cpp
 	"Menu.h"
@@ -462,7 +467,7 @@
 1526057770 source:d:\int2202_game\gameproject\mixer.cpp
 	"Mixer.h"
 
-1526052839 source:d:\int2202_game\gameproject\notificationlayer.cpp
+1526442499 source:d:\int2202_game\gameproject\notificationlayer.cpp
 	"NotificationLayer.h"
 	<cmath>
 
@@ -475,25 +480,16 @@
 	"Mixer.h"
 	<cmath>
 
-1525617141 source:d:\int2202_game\gameproject\resources.cpp
+1526472554 source:d:\int2202_game\gameproject\resources.cpp
 	"Resources.h"
 	<iostream>
 
 1525581099 source:d:\int2202_game\gameproject\sprite.cpp
 	"Sprite.h"
 
-1525602667 source:d:\int2202_game\gameproject\textmanager.cpp
-	"TextManager.h"
-
 1524576642 source:d:\int2202_game\gameproject\texturemanager.cpp
 	"TextureManager.h"
 
-1526098810 source:d:\int2202_game\gameproject\fruit.cpp
-	<cstdlib>
-	<time.h>
-	<math.h>
-	<random>
-	<string>
-	"Fruit.h"
-	"Layer.h"
+1526484059 source:d:\int2202_game\gameproject\textmanager.cpp
+	"TextManager.h"
 

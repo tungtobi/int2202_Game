@@ -61,11 +61,11 @@ void NotificationLayer::render()
 
     background.render();
 
-    line1.render(SCREEN_WIDTH / 2 - 120, SCREEN_HEIGHT / 2 + 100, CENTER_ALIGN);
-    scoreLabel.render(SCREEN_WIDTH / 2 - 120, SCREEN_HEIGHT / 2 + 160, CENTER_ALIGN);
+    line1.render(SCREEN_WIDTH / 2 - 120, SCREEN_HEIGHT / 2 + 70, CENTER_ALIGN);
+    scoreLabel.render(SCREEN_WIDTH / 2 - 120, SCREEN_HEIGHT / 2 + 140, CENTER_ALIGN);
 
-    line2.render(SCREEN_WIDTH / 2 + 120, SCREEN_HEIGHT / 2 + 100, CENTER_ALIGN);
-    bestScoreLabel.render(SCREEN_WIDTH / 2 + 120, SCREEN_HEIGHT / 2 + 160, CENTER_ALIGN);
+    line2.render(SCREEN_WIDTH / 2 + 120, SCREEN_HEIGHT / 2 + 70, CENTER_ALIGN);
+    bestScoreLabel.render(SCREEN_WIDTH / 2 + 120, SCREEN_HEIGHT / 2 + 140, CENTER_ALIGN);
 
     line3.render(SCREEN_WIDTH - 8, SCREEN_HEIGHT - 12, RIGHT_ALIGN);
 
@@ -78,6 +78,7 @@ void NotificationLayer::listenEvent()
     {
         if (Game::event.key.keysym.sym == SDLK_SPACE)
         {
+            game->mixManager.playSoundEffect(EATING_SOUND);
             game->showMenu();
         }
     }

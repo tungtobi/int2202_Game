@@ -21,7 +21,7 @@ private:
     std::vector<Text> menuLabel{size};
     Text gameInfo{LIGHT, 12};
     MenuItem selection = SINGLY_PLAY;
-    Sprite background{"res/backgroundNotice.png"};
+    Sprite background{"res/backgroundMenu.png"};
     void initLabels();
     void listenEvents();
     void select(MenuItem prevSelect, MenuItem selected);

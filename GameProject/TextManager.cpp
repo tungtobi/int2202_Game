@@ -20,7 +20,7 @@ void Text::initTexture()
     SDL_QueryTexture(texture, NULL, NULL, &dstRect.w, &dstRect.h);
 }
 
-void Text::render(const int _x, const int _y, const int align)
+void Text::render(const int _x, const int _y, Align align)
 {
     switch (align)
     {

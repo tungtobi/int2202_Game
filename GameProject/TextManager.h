@@ -1,14 +1,18 @@
 #ifndef TEXTMANAGER_H_
 #define TEXTMANAGER_H_
 
-#define LEFT_ALIGN 0
-#define CENTER_ALIGN 1
-#define RIGHT_ALIGN 2
 #define BOLD "res/font/Maplestory Bold.ttf"
 #define LIGHT "res/font/Maplestory Light.ttf"
 
 #include "Game.h"
 #include <SDL2/SDL_ttf.h>
+
+enum Align
+{
+    LEFT_ALIGN = 0,
+    CENTER_ALIGN,
+    RIGHT_ALIGN
+};
 
 class Text
 {
@@ -24,7 +28,7 @@ public:
 
     SDL_Texture* texture;
 
-    void render(const int _x, const int _y, const int align);
+    void render(const int _x, const int _y, Align align);
     void initTexture();
 
 private:

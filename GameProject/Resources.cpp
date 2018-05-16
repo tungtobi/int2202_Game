@@ -19,7 +19,5 @@ void Resources::setType(int type)
 Resources::~Resources()
 {
     delete normal;
-    std::cout << "Delete s" << std::endl;
     delete hurted;
-    std::cout << "Delete st" << std::endl;
 }

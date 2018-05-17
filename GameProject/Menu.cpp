@@ -2,9 +2,11 @@
 #include "Game.h"
 #include "Mixer.h"
 
+using namespace std;
+
 extern Game* game;
 
-std::string menuText[size] =
+string menuText[size] =
 {
     "1-Player Mode",
     "2-Players Mode",
@@ -14,9 +16,10 @@ std::string menuText[size] =
 
 Menu::Menu()
 {
+    // ve ra hinh nen
     background.setPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
     initLabels();
-    std::cout << "init labels" << std::endl;
+    cout << "init labels" << endl;
     select(QUIT, SINGLY_PLAY);
 }
 
@@ -28,18 +31,20 @@ void Menu::initLabels()
         menuLabel[i].initTexture();
     }
 
+    //tieu de game
     gameInfo.para = "Hungry Piggy v1.0.1";
     gameInfo.initTexture();
 }
 
 void Menu::updateSoundLabel(bool _isMuted)
 {
-    std::string title = "Audio: ",
-                status = _isMuted ? "OFF" : "ON";
+    string title = "Audio: ",
+           status = _isMuted ? "OFF" : "ON";
     menuText[SOUND] = title + status;
     select(QUIT, SOUND);
 }
 
+// lua chon doi mau, lua chon truoc chuyen thanh trang
 void Menu::select(MenuItem prevSelect, MenuItem selected)
 {
     menuLabel[prevSelect].para = menuText[prevSelect];

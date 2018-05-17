@@ -4,6 +4,16 @@
 #include "Game.h"
 #include "Player.h"
 
+enum FruitType
+{
+    PEAR = 1,
+    STRAWBERRY,
+    PEACH,
+    ROCK,
+    MEDICINE,
+    MUSHROOM
+};
+
 class Fruit
 {
 public:
@@ -21,11 +31,11 @@ public:
     void checkCaught(Player& player);
 
 private:
-    int type;
+    FruitType type;
     float dt = 0;
     void checkOutsideLayer();
     int generateRandom(int width);
-    std::string loadFileName(int type);
+    std::string loadFileName(FruitType type);
     double getDistance(const Player& player);
 };
 

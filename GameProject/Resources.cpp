@@ -1,7 +1,7 @@
 #include "Resources.h"
 #include <iostream>
 
-void Resources::setType(int type)
+void Resources::setType(PlayerType type)
 {
     switch (type)
     {

@@ -1,10 +1,11 @@
 #include "TextManager.h"
+using namespace std;
 
 Text::Text(const char* path, const int _size)
 {
     size = _size;
     font = TTF_OpenFont(path, size);
-    std::cout << "Text created!" << std::endl;
+    cout << "Text created!" << endl;
 
     initTexture();
 
@@ -22,6 +23,7 @@ void Text::initTexture()
 
 void Text::render(const int _x, const int _y, Align align)
 {
+    //can chinh chu
     switch (align)
     {
     case CENTER_ALIGN:
@@ -47,9 +49,9 @@ Text::~Text()
     delete texture;
 }
 
-std::string convertIntToStr(unsigned int number)
+string convertIntToStr(unsigned int number)
 {
-    std::string str = "";
+    string str = "";
 
     if (number == 0)
     {

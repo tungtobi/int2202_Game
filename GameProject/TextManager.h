@@ -14,13 +14,15 @@ enum Align
     RIGHT_ALIGN
 };
 
+using namespace std;
+
 class Text
 {
 public:
     Text(const char* path = BOLD, const int _size = 18);
     ~Text();
 
-    std::string para;
+    string para;
     int size;
 
     TTF_Font* font;
@@ -35,6 +37,6 @@ private:
     SDL_Rect dstRect;
 };
 
-std::string convertIntToStr(unsigned int number);
+string convertIntToStr(unsigned int number);
 
 #endif // TEXTMANAGER_H_

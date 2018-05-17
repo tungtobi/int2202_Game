@@ -15,10 +15,12 @@ enum MenuItem
 
 const int size = 4;
 
+using namespace std;
+
 class Menu
 {
 private:
-    std::vector<Text> menuLabel{size};
+    vector<Text> menuLabel{size};
     Text gameInfo{LIGHT, 12};
     MenuItem selection = SINGLY_PLAY;
     Sprite background{"res/backgroundMenu.png"};

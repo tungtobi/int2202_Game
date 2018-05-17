@@ -13,7 +13,7 @@ enum PlayerType
 class Resources
 {
 public:
-    void setType(int type);
+    void setType(PlayerType type);
     ~Resources();
     const char* normal;
     const char* hurted;

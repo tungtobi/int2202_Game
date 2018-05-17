@@ -13,7 +13,7 @@ int Fruit::generateRandom(int width)
     return rand() % width + 1;
 }
 
-std::string Fruit::loadFileName(int type)
+std::string Fruit::loadFileName(FruitType type)
 {
     std::string path1 = "res/fruit",
                 path2 = "0",
@@ -27,7 +27,7 @@ Fruit::Fruit()
     int maxType = 5 + ((layer->isMultyPlayer) ? 1 : 0);
 
     srand(time(0));
-    type = generateRandom(maxType);
+    type = FruitType(generateRandom(maxType));
 
     std::string path = loadFileName(type);
 
@@ -36,7 +36,7 @@ Fruit::Fruit()
     w = sprite.dstRect.w;
     h = sprite.dstRect.h;
 
-    if (type != 4)
+    if (type != ROCK)
     {
         x = generateRandom(SCREEN_WIDTH);
     }
@@ -85,16 +85,16 @@ void Fruit::checkCaught(Player& player)
 
             switch (type)
             {
-            case 4:
+            case ROCK:
                 Game::mixManager.playSoundEffect(HURTED_SOUND);
                 player.score /= 2;
                 player.getStuck();
                 break;
-            case 5:
+            case MEDICINE:
                 layer->time += 5.0;
                 Game::mixManager.playSoundEffect(EATING_SOUND);
                 break;
-            case 6:
+            case MUSHROOM:
                 Game::mixManager.playSoundEffect(HURTED_SOUND);
                 layer->addFlower(player.id);
                 break;

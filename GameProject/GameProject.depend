@@ -493,3 +493,497 @@
 1526535006 source:d:\int2202_game\gameproject\textmanager.cpp
 	"TextManager.h"
 
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\animation.cpp
+	"Animation.h"
+	"TextManager.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\animation.h
+	"Sprite.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\sprite.h
+	"TextureManager.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\texturemanager.h
+	"Game.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\game.h
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL_image.h>
+	"Mixer.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<sal.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\close_code.h
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32_image\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\mixer.h
+	<iostream>
+	<vector>
+	<SDL2/SDL_mixer.h>
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32_mixer\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\textmanager.h
+	"Game.h"
+	<SDL2/SDL_ttf.h>
+
+1526545879 d:\int2202_game-master\int2202_game-master\i686-w64-mingw32_ttf\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\director.cpp
+	"Director.h"
+	"Fruit.h"
+	"Layer.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\director.h
+	"Game.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\fruit.h
+	"Game.h"
+	"Player.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\player.h
+	"Game.h"
+	"Animation.h"
+	"Resources.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\resources.h
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\layer.h
+	"Player.h"
+	"Fruit.h"
+	"TextManager.h"
+	<vector>
+	"Director.h"
+	"Flower.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\flower.h
+	"Game.h"
+	"Animation.h"
+	"Player.h"
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\flower.cpp
+	"Flower.h"
+	"Layer.h"
+
+1534270902 source:d:\int2202_game-master\int2202_game-master\gameproject\fruit.cpp
+	<cstdlib>
+	<time.h>
+	<math.h>
+	<random>
+	<string>
+	"Fruit.h"
+	"Layer.h"
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\game.cpp
+	<SDL2/SDL_ttf.h>
+	"Game.h"
+	"Player.h"
+	"Sprite.h"
+	"Fruit.h"
+	"Layer.h"
+	"NotificationLayer.h"
+	"LoadingScene.h"
+	"Data.h"
+	"Menu.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\notificationlayer.h
+	"Game.h"
+	"TextManager.h"
+	"Sprite.h"
+	<vector>
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\loadingscene.h
+	"Game.h"
+	"Sprite.h"
+	"TextManager.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\data.h
+	<iostream>
+	<fstream>
+	<ios>
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\menu.h
+	<vector>
+	"TextManager.h"
+	"Sprite.h"
+
+1534270101 source:d:\int2202_game-master\int2202_game-master\gameproject\layer.cpp
+	"Layer.h"
+	<algorithm>
+	<cstdlib>
+	"PauseLayer.h"
+	"Game.h"
+
+1526545879 d:\int2202_game-master\int2202_game-master\gameproject\pauselayer.h
+	"Game.h"
+	"TextManager.h"
+	"Sprite.h"
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\main.cpp
+	"Game.h"
+
+1534273328 source:d:\int2202_game-master\int2202_game-master\gameproject\menu.cpp
+	"Menu.h"
+	"Game.h"
+	"Mixer.h"
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\mixer.cpp
+	"Mixer.h"
+
+1534273448 source:d:\int2202_game-master\int2202_game-master\gameproject\notificationlayer.cpp
+	"NotificationLayer.h"
+	<cmath>
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\pauselayer.cpp
+	"PauseLayer.h"
+
+1534270162 source:d:\int2202_game-master\int2202_game-master\gameproject\player.cpp
+	"Player.h"
+	"Layer.h"
+	"Mixer.h"
+	<cmath>
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\resources.cpp
+	"Resources.h"
+	<iostream>
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\sprite.cpp
+	"Sprite.h"
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\textmanager.cpp
+	"TextManager.h"
+
+1526545879 source:d:\int2202_game-master\int2202_game-master\gameproject\texturemanager.cpp
+	"TextureManager.h"
+

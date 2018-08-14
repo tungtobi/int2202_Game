@@ -16,7 +16,7 @@ Player::Player(PlayerType type)
     h = animation.sprite.dstRect.h;
 
     x = SCREEN_WIDTH / 2;
-    y = SCREEN_HEIGHT - 105;
+    y = SCREEN_HEIGHT - 115;
 }
 
 void Player::listenEventFromKeyboard(const SDL_Keycode moveRight, const SDL_Keycode moveLeft)

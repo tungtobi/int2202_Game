@@ -87,7 +87,7 @@ void Fruit::checkCaught(Player& player)
             {
             case ROCK:
                 Game::mixManager.playSoundEffect(HURTED_SOUND);
-                player.score /= 2;
+                //player.score /= 2;
                 player.getStuck();
                 break;
             case MEDICINE:
@@ -123,7 +123,10 @@ void Fruit::update()
         dt += 0.2;
     }
 
-    sprite.angle = acceleration * dt * dt / 6;
+    if (type != ROCK)
+    {
+        sprite.angle = acceleration * dt * dt / 6;
+    }
 
     y = -50 + speed * dt + acceleration * dt * dt / 2;
 

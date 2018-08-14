@@ -20,8 +20,8 @@ Layer::Layer(const bool _isMultyPlayer)
     else
     {
         background.loadFrame("res/backgroundMulty.png");
-        player2.x = SCREEN_WIDTH / 3;
-        player.x = 2 * SCREEN_WIDTH / 3;
+        player2.x = 2 * SCREEN_WIDTH / 3;
+        player.x = SCREEN_WIDTH / 3;
         updateScore(player);
         updateScore(player2);
     }

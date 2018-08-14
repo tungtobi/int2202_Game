@@ -32,7 +32,7 @@ void Menu::initLabels()
     }
 
     //tieu de game
-    gameInfo.para = "Hungry Piggy v1.0.1";
+    gameInfo.para = "COPYRIGHT (C) HRTECH 2018";
     gameInfo.initTexture();
 }
 
@@ -52,7 +52,7 @@ void Menu::select(MenuItem prevSelect, MenuItem selected)
     menuLabel[prevSelect].initTexture();
 
     menuLabel[selected].para = menuText[selected] + " \n";
-    menuLabel[selected].color = {0, 0, 127};
+    menuLabel[selected].color = {227, 156, 224};
     menuLabel[selected].initTexture();
 
     selection = selected;

@@ -39,6 +39,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add directory="../i686-w64-mingw32/include" />
 			<Add directory="../i686-w64-mingw32_image/include" />
 			<Add directory="../i686-w64-mingw32_mixer/include" />

@@ -27,12 +27,12 @@ void NotificationLayer::initTextLabel()
     {
         if (score > score2)
         {
-            line1.para = "Black pig win!";
+            line1.para = "PLAYER 1 win!";
             scoreLabel.para = convertIntToStr(score);
         }
         else
         {
-            line1.para = "Pink pig win!";
+            line1.para = "PLAYER 2 win!";
             scoreLabel.para = convertIntToStr(score2);
         }
     }
